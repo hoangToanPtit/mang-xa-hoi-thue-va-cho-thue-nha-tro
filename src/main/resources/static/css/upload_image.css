@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrap-upload-image{
+    width: 500px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 5px;
+    display: flex;
+    background-color: aquamarine;
+}
+
+.view-images {
+    display: flex;
+}
+
+.wrap-upload-image img {
+    margin-right: 5px;
+}
+
+
+
+.wrap-upload-image label {
+    width: 70px;
+    height: 70px;
+    background-color: rgb(229, 236, 236);
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: aquamarine; */
+}
+
+.wrap-upload-image input {
+    display: none;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+   <!--  <link rel="stylesheet" href="../asset/css/signup.css"> -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/signup.css}"/>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- multistep form -->
+    <form id="msform">
+        <!-- fieldsets -->
+        <fieldset>
+            <h2 class="fs-title">ĐĂNG KÝ</h2>
+            <h3 class="fs-subtitle"><a href="http://localhost:8081/login">Đăng nhập</a> nếu bạn đã có tài khoản</h3>
+            
+            <input type="text" name="fullName" placeholder="Họ và tên" />
+            <p class="err"></p>
+            <input type="text" name="dob" placeholder="Ngày sinh (dd/mm/yyyy)" />
+            <p class="err"></p>
+            <input type="text" name="email" placeholder="Email" />
+            <p class="err"></p>
+            <input type="text" name="userName" placeholder="Tên đăng nhập" />
+            <p class="err"></p>
+            <input type="password" name="password" placeholder="Mật khẩu" />
+            <p class="err"></p>
+            <input type="password" name="re-pass" placeholder="Nhập lại mật khẩu" />
+            <p class="err"></p>
+            <div class="select-role">
+                <p>Đăng ký tài khoản với vai trò là :</p>
+                <div class="role1">Chủ nhà trọ</div>
+                <div class="role2">Người thuê trọ</div>
+            </div>
+            <p class="err"></p>
+            <input type="button" name="submit" class="submit action-button" value="Đăng ký" />
+        </fieldset>
+    </form>
+
+    <!-- <script src="../asset/js/signup.js"></script> -->
+    <script type="text/javascript" th:src="@{/js/signup.js}"></script>
+</body>
+</html>
+
+<!-- https://codepen.io/atakan/pen/nPOZZR -->

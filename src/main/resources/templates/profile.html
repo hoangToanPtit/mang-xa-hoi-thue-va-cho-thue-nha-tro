@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- iconsout -->
+    <!-- <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- iconsout -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+
+    
+   <!--  <link rel="stylesheet" href="../asset/css/style.css">
+    <link rel="stylesheet" href="../asset/css/style-profile.css">
+    <link rel="stylesheet" href="../asset/css/slider.css" />
+ -->
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style-profile.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/slider.css}"/>
+    
+    <title>Profile</title>
+</head>
+<body>
+    <nav>
+        <div class="container" style="width: 85%;">
+            <h2 class="log">
+                <a href="http://localhost:8081/home">SocialMedia</a>
+            </h2>
+            <div class="search-bar" style="margin-left: 40px;">
+                <i class="uil uil-search"></i>
+                <input type="search" placeholder="Nhập nội dung tìm kiếm">
+            </div>
+            <div class="create">
+                <label class="btn btn-primary btn_new_post" for="create-post">Đăng tin</label>
+                <div class="profile-photo">
+                    <img src="../images/profile-1.jpg" alt="">
+                </div>
+                <!-- <div>
+                    <img src="../images/icons8-sort-down-24.png" alt="">
+
+                </div> -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- -----------------------Profile------------- -->
+    <!-- <div class="profile-container">
+        <div class="cover">
+            <img src="../images/feed-5.jpg" alt="" class="cover-img">
+            <span><i class="uil uil-camera"></i>Thay đổi ảnh bìa</span>
+        </div>
+        <img src="../images/profile-11.jpg" alt="" class="pd-image">
+
+        <div class="profile-details">
+                <div class="pd-row">
+                    <h3>Hoang Toan</h3>
+                    <p>120 friends - 20 mutual</p>
+                </div>
+            </div>
+        </div>    
+    </div> -->
+
+
+
+     <!-- -----------------------------------Main------------------------------------ -->
+     <main>
+        <div class="container profile" style="margin-right: 195px;">
+            <!-- ------------------------left-------------------------- -->
+            <div class="left">
+                <div class="profile-card">
+                    <div class="cover-photo">
+                        <img src="../images/profile-1.jpg" alt="" class="avt">
+                        <input type="file" name="" id="input-avt" style="display: none;">
+                        <label for="input-avt" class="change-avt"><i class="uil uil-camera"></i></label>
+                    </div>
+                    <div class="handle">
+                        <h4 class="fullName">Nguyen Toan</h4>
+                        <p class="text-muted nickname">@hoangtoan</p>
+                    </div>
+                    <div class="about">
+                        <!-- <p>Không chuẩn bị là chuẩn bị cho thất bại</p> -->
+                        <p><i class="fa fa-birthday-cake" aria-hidden="true"></i><span class="dob">04/10/2001</span></p>
+                        <p ><i class="fa fa-phone" aria-hidden="true"></i><span class="phone">0948226126</span></p>
+                        <p ><i class="fa fa-envelope" aria-hidden="true"></i><span class="email">hoangtoan04102001@gmail</span></p>
+                    </div>
+                    <div class="follow">
+                        <label class="btn btn-primary follow-btn">Follow</label>
+                    </div>
+                    <div class="social-icon">
+                        <span><i class="uil uil-facebook-f"></i></span>
+                        <span><i class="uil uil-instagram"></i></span>
+                        <span><i class="uil uil-youtube"></i></span>
+                        <span><i class="uil uil-twitter-alt"></i></span>
+                    </div>
+                    <div class="information">
+                        <a class="inf-item active btn_post_prf">
+                            <span><i class="uil uil-postcard"></i></span><h3>Bài viết</h3>
+                        </a>
+                        <a class="inf-item btn_view_saved_post">
+                            <span><i class="uil uil-bookmark"></i></span><h3>Đã lưu</h3>
+                        </a>
+                        <!-- <a class="inf-item ">
+                            <span><i class="uil uil-eye"></i></span><h3>Theo dõi</h3>
+                        </a> -->
+                        <a class="inf-item btn-edit-profile">
+                            <span><i class="uil uil-user"></i></span><h3>Chỉnh sửa thông tin</h3>
+                        </a>
+                        <a class="inf-item btn_menu_edit_account">
+                            <span><i class="uil uil-setting"></i></span><h3>Cài đặt tài khoản</h3>
+                        </a>
+                        <a class="inf-item btn_menu_logout">
+                            <span><i class="uil uil-signout"></i></span><h3>Đăng xuất</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- -------------------------------------end of left--------------------------------- -->
+
+
+            <!-- ---------------------------------------------Middle------------------------------- -->
+            <div class="middle">
+
+                <form class="create-post">
+                    <div class="profile-photo">
+                        <img src="../images/profile-1.jpg" alt="">
+                    </div>
+                    <input type="text" placeholder="Giới thiệu nhà trọ bạn biết đến mọi người" id="create-post">
+                    <input type="button" class="btn btn-primary btn_new_post" value="Bắt đầu">
+                </form>
+            
+                <!-- ---------Feeds--------- -->
+                <div class="feeds">
+
+                    <!-- ---------Test Feed 1--------- -->
+                    <div class="feed">
+                        <div class="head">
+                            <div class="user">
+                                <div class="profile-photo">
+                                    <img src="../images/profile-1.jpg" alt="">
+                                </div>
+                                <div class="ingo">
+                                    <h3>Nguyen Van Toan</h3>
+                                    <small>Dubai, 15 Minutes ago</small>
+                                </div>
+                            </div>
+                            <span class="edit">
+                                <i class="uil uil-ellipsis-h"></i>
+                            </span>
+                            <div class="edit-box  none">
+                                <ul>
+                                    <li class="btn_edit_post">Chỉnh sửa</li>
+                                    <li class="btn_delete_post"  id = "edit0">Xóa</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="photo photo_cus">
+                            <img src="../images/feed-1.jpg" alt="">
+                            <div class="photo_mix_cus">
+                                <img src="../images/feed-2.jpg" alt="">
+                                <img src="../images/feed-3.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="like-by" style="font-size: 0.8rem;">
+                            <span><img src="../images/profile-10.jpg" alt=""></span>
+                            <span><img src="../images/profile-11.jpg" alt=""></span>
+                            <span><img src="../images/profile-17.jpg" alt=""></span>
+                            <p>Liked by <b>A</b>, <b>B</b>, <b>C</b> and 1K others</p>
+                        </div>
+                        <div class="action-button">
+                            <div class="interaction-buttons">
+                                <span><i class="uil uil-heart"></i></span>
+                                <span><i class="uil uil-comment-dots"></i></span>
+                            </div>
+                            <div class="bookmark">
+                                <span><i class="fa fa-bookmark-o btn_save" aria-hidden="true"></i></span>
+                                <!-- <span><i class="fa fa-bookmark" aria-hidden="true"></i></span> -->
+
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3>Phòng cho thuê Triều Khúc</h3>
+                            Giá thuê: <span style="color: red; font-size: 1rem;"><b>5,000,000</b></span> VND/Phòng<br>
+                        </div>
+                        <div>
+                            <div>
+                                Số phòng: 5
+                            </div>
+                            <div>
+                                Diện tích: 50 m2
+                            </div>
+                            <div>
+                                Sức chứa: 2 người
+                            </div>
+                            <div>
+                                Đặt cọc : 1tr
+                            </div>
+                        </div>
+                        <div>
+                            <h5>Chi tiết</h5>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                                Molestias dolorum tenetur nam accusantium sapiente quod omnis 
+                                ipsa quo at mollitia dicta officiis, vitae nesciunt ea fugiat
+                                 commodi. Maxime, maiores suscipit!</p>
+                        </div>
+                        <div>
+                            <h5>Địa chỉ</h5>
+                            <div>Sô 3, ngõ 137 Triều Khúc, Tân Triều, Thanh Trì, Hà Nội</div>
+                        </div>
+                        <div>
+                            <h5>Tiện ích</h5>
+
+
+                        </div>
+                        <div class="comments text-muted btn">Xem chi tiết</div>
+                    </div>
+                    <!-- ---------End of Test Feed 1--------- -->
+
+                </div>
+                <!-- ---------End of Feeds --------- -->
+
+            </div>
+            <!-- -----------------------------End of middle------------------------------- -->
+
+            <!-- ---------------------------------Right------------------------------------- -->
+            <div class="right none">
+                <!--  --------------Messages--------- -->
+                <div class="messages">
+                    <div class="heading">
+                        <h4>Theo dõi</h4><i class="uil uil-edit"></i>
+                    </div>
+                    <!-- ---------search bar---------- -->
+                    <div class="search-bar">
+                        <i class="uil uil-search"></i>
+                        <input type="search" name="" id="message-search" placeholder="Tìm kiếm bạn bè">
+                    </div>
+                    <!-- --------Nessages Category------ -->
+                    <div class="category">
+                        <h6 class="active">Đang theo dõi (9)</h6>
+                        <h6>Người theo dõi (10)</h6>
+                        <h6 class="message-requests">Gợi ý</h6>
+                    </div>
+
+                    <!-- ---------Message----- -->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="../images/profile-1.jpg" alt="">
+                            <div class="active"></div>
+                        </div>
+                        <div class="message-body">
+                            <h5>Edem Quist</h5>
+                            <p class="text-bold">Just woke up brush</p>
+                        </div>
+                    </div>
+                    <!-- ---------Message----- -->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="../images/profile-1.jpg" alt="">
+                            <!-- <div class="active"></div> -->
+                        </div>
+                        <div class="message-body">
+                            <h5>Edem Quist</h5>
+                            <p class="text-bold">Just woke up brush</p>
+                        </div>
+                    </div>
+                    <!-- ---------Message----- -->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="../images/profile-1.jpg" alt="">
+                            <div class="active"></div>
+                        </div>
+                        <div class="message-body">
+                            <h5>Edem Quist</h5>
+                            <p class="text-bold">Just woke up brush</p>
+                        </div>
+                    </div>
+                    <!-- ---------Message----- -->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="../images/profile-1.jpg" alt="">
+                            <div class="active"></div>
+                        </div>
+                        <div class="message-body">
+                            <h5>Edem Quist</h5>
+                            <p class="text-bold">Just woke up brush</p>
+                        </div>
+                    </div>
+                    <!-- ---------Message----- -->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="../images/profile-1.jpg" alt="">
+                            <div class="active"></div>
+                        </div>
+                        <div class="message-body">
+                            <h5>Edem Quist</h5>
+                            <p class="text-bold">Just woke up brush</p>
+                        </div>
+                    </div>
+                    <!-- ---------Message----- -->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="../images/profile-1.jpg" alt="">
+                            <div class="active"></div>
+                        </div>
+                        <div class="message-body">
+                            <h5>Edem Quist</h5>
+                            <p class="text-bold">Just woke up brush</p>
+                        </div>
+                    </div>
+                    <!-- ---------Message----- -->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="../images/profile-1.jpg" alt="">
+                            <!-- <div class="active"></div> -->
+                        </div>
+                        <div class="message-body">
+                            <h5>Edem Quist</h5>
+                            <p class="text-bold">Just woke up brush</p>
+                        </div>
+                    </div>
+                </div>
+                <!--  --------------End of Messages--------- -->
+
+
+                </div>
+            </div>
+            <!-- -----------------------------------End of Main------------------------------- -->
+
+        </div>
+    </main>
+    <!-- ----------------------edit profile ---------- -->
+    <div class="wrap-edit-profile">
+        <div class="edit-profile">
+            <div>
+                <h2>Chỉnh sửa thông tin cá nhân</h2>
+            </div>
+            <div class="info">
+                <div class="edit-name">
+                    <div class="field">
+                        <label for="fullname">Họ và tên</label>
+                        <input type="text" name="fullName" id="fullname" placeholder="Nhập vào họ và tên">
+                    </div>
+                    <div class="field">
+                        <label for="nickname">Biệt danh</label>
+                        <input type="text" name="nickName" id="nickname" placeholder="@bietdanh">
+                    </div>
+                </div>
+                <div class="edit-second">
+                    <div class="field edit-dob">
+                        <label for="dob">Ngày sinh</label>
+                        <input type="text" name="dob" id="dob" placeholder="dd/mm/yyyy">
+                    </div>
+                    <div class="field edit-phone">
+                        <label for="phone">Số điện thoại</label>
+                        <input type="text" name="phone" id="phone" placeholder="Nhập vào số điện thoại của bạn">
+                    </div>
+                </div>
+                <div class="field edit-email">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Nhập vào email của bạn">
+                </div>
+                <div class="field edit-facebook">
+                    <label for="fb">Facebook</label>
+                    <input type="text" name="facebook" id="fb" placeholder="Đường dẫn đến tài khoản facebook của bạn">
+                </div>
+                <div class="field edit-instagram">
+                    <label for="insta">Instagram</label>
+                    <input type="text" name="instagram" id="insta"  placeholder="Đường dẫn đến tài khoản instagram của bạn">
+                </div>
+                <div class="edit-btn">
+                    <button class="btn btn-save-info">Lưu thay đổi</button>
+                    <button class="btn btn-cancel">Hủy</button>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    
+    <!-- ------------- change password ----------- -->
+    <div class="wrap-edit-account">
+        <div class="edit-account">
+            <span class="edit-account-close-btn"><i class="uil uil-multiply"></i></span>
+            <div>
+                <h2>Cài đặt tài khoản</h2>
+            </div>
+            <p class="noti-sucess none" style="text-align: center; color:rgb(50, 199, 50); margin-top: -20px;">Đổi mật khẩu thành công</p>
+            <!-- <div class="edit-userName">
+                <div class="edit-wrap-field">
+                    <div class="field">
+                        <label for="userName">Tên đăng nhập</label>
+                        <input type="text" name="userName" id="userName" placeholder="Nhập vào tên tài khoản của bạn">
+                    </div>
+                    <div class="field">
+                        <label for="password">Mật khẩu</label>
+                        <input type="password" name="password" id="password" placeholder="Nhập mật khẩu hiện tại của bạn">
+                    </div>
+                    <p class="error-edit-userName" style="color: red; margin-top: 10px; font-size: 0.8rem;">
+                        *error
+                    </p>
+                </div>
+                <button class="btn-save-username">Đổi tên</button>
+            </div> -->
+            <div class="edit-password">
+                <div class="edit-wrap-field">
+                    <div class="field">
+                        <label for="ex-password">Mật khẩu cũ</label>
+                        <input type="text" name="ex-password" id="ex-password" placeholder="Nhập mật khẩu hiện tại của bạn">
+                    </div>
+                    <p class="error-edit-password" style="color: red; margin-top: 3px; font-size: 0.8rem; height: 10px;">
+                        <small></small>
+                    </p>
+                    <div class="field">
+                        <label for="new-password">Mật khẩu mới</label>
+                        <input type="password" name="new-password" id="new-password" placeholder="Nhập mật khẩu mới">
+                    </div>
+                    <p class="error-edit-password" style="color: red; margin-top: 3px; font-size: 0.8rem; height: 10px;">
+                        <small></small>
+                    </p>
+                    <div class="field">
+                        <label for="re-new-password">Nhập lại khẩu mới</label>
+                        <input type="password" name="re-new-password" id="re-new-password" placeholder="Nhắc lại mật khẩu mới">
+                    </div>
+                    <p class="error-edit-password" style="color: red; margin-top: 3px; font-size: 0.8rem; height: 10px;">
+                        <small></small>
+                    </p>
+                    <button class="btn-save-password">Đổi mât khẩu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!-- --------------------------New Posts------------------- -->
+    <div class="wrap-new-post">
+        <div class="new-post">
+            <div class="cancel">
+                <i class="uil uil-times btn-cancel"></i>
+            </div>
+            <ul class="progress-bar">
+                <li >Thông tin</li>
+                <li>Địa chỉ</li>
+                <li>Tiện ích</li>
+                <li>Xác nhận</li>
+            </ul>
+    
+            <!-- infor -->
+            <div class="fieldset info-feilds" >
+                <div class="common-info">
+                    <div class="info-field">
+                        <h3>THÔNG TIN PHÒNG</h3>
+                        <!-- <div style="display: flex; align-items: center; justify-content: space-between;"> -->
+                            <div class="new-type-room">
+                                <h5>Loại phòng:</h5>
+                                <div class="new-select-type">
+                                    <div>
+                                        <input type="radio" id="room-type1" name="roomType" value="Phòng cho thuê">
+                                        <label for="room-type1">Phòng cho thuê</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="room-type2" name="roomType" value="Phòng ở ghép">
+                                        <label for="room-type2">Phòng ở ghép</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="room-type3" name="roomType" value="Nhà nguyên căn">
+                                        <label for="room-type3">Nhà nguyên căn</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-input new-size">
+                                <h5>Diện tích:</h5>
+                                <input type="text" name="size" id="" placeholder="(m2)">
+                            </div>
+                        <!-- </div> -->
+                        <div class="new-input new-amount">
+                            <h5>Số lượng phòng:</h5>
+                            <input type="text" name="amount" id="" placeholder="(phòng)">
+                        </div>
+                        <div class="new-input new-capacity">
+                            <h5>Sức chứa:</h5>
+                            <input type="text" name="capacity" id="" placeholder="(người/phòng)">
+                        </div>
+                        <div class="new-gender">
+                            <h5>Giới tính:</h5>
+                            <div class="new-select-gender">
+                                <div>
+                                    <input type="radio" id="gender1" name="gender" value="Tất cả">
+                                    <label for="gender1">Tất cả</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="gender2" name="gender" value="Nam">
+                                    <label for="gender2">Nam</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="gender3" name="gender" value="Nữ">
+                                    <label for="gender3">Nữ</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+    
+                    <div class="cost-field">
+                        <h3>CHI PHÍ</h3>
+                        <div class="new-input new-rent-price">
+                            <h5>Giá cho thuê:</h5>
+                            <input type="text" name="rentPrice" id="" placeholder="(VND/tháng)">
+                        </div>
+                        <div class="new-input new-deposit">
+                            <h5>Đặt cọc:</h5>
+                            <input type="text" name="deposit" id="" placeholder="(VND)">
+                        </div>
+                        <div class="new-input">
+                            <h5>Tiền điện:</h5>
+                            <input type="text" name="electricityPrice" id="" placeholder="(VND/số)">
+                        </div>
+                        <div class="new-input">
+                            <h5>Tiền nước:</h5>
+                            <input type="text" name="waterPrice" id="" placeholder="(VND/tháng)">
+                        </div>
+                        <div class="new-input">
+                            <h5>Internet:</h5>
+                            <input type="text" name="internetPrice" id="" placeholder="(VND/tháng)">
+                        </div>
+                        <div class="new-input">
+                            <h5>Phí giữ xe: <small class="text-muted"><p>(nếu có)</p></small></h5>
+                            <input type="text" name="parkingFee" id="" placeholder="(VND/tháng)">
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+
+            <!-- location -->
+            <div class="fieldset location-field" >
+                <h3>Địa chỉ</h3>
+                <div class="new-location">
+                    <div>
+                        <label for="province">Tỉnh/Thành Phố:</label>
+                        <select name="province" id="province">
+                          <option value="0" selected>Chọn tỉnh/Thành phố</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="district">Quận/Huyện:</label>
+                        <select name="district" id="district">
+                          <option value="0">Chọn Quận/Huyện</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="wards">Phường/Xã:</label>
+                        <select name="wards" id="wards">
+                          <option value="0" selected>Chọn Phường/Xã</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- <div class="second-location"> -->
+                    <div class="new-street" >
+                        <label for="new-streetName">Tên đường:</label>
+                        <input type="text" name="streetName" id="new-streetName" placeholder="Nhập và tên đường/xóm/phố">
+                    </div>
+                    <div class="new-house">
+                        <label for="new-houseNumber">Số nhà:</label>
+                        <input type="text" name="houseNumber" id="new-houseNumber" placeholder="Nhập vào số nhà">
+                    </div>
+                <!-- </div> -->
+              </div>
+
+            <!-- images -->
+            <div class="fieldset image-field search-util-room" >
+                <h3>Thêm hình ảnh
+                <small style="font-weight: 200;" class="text-muted"><p>(ít nhất 3 hình ảnh)</p></small>
+                </h3>
+                <div>
+                    <div class="wrap-upload-image">
+                        <div class="view-images">
+                            <!-- <div class="wrap-img">
+                                <img src="../images/profile-1.jpg" alt="">
+                                <span><i class="uil uil-times"></i></span>
+                            </div> -->
+                        </div>
+                        <input type="file" name="" id="input-image" class="input-image">
+                        <label for="input-image" class="add-image">+</label>
+                        
+                    </div>
+                </div>
+                <div class="title">
+                    <h3>Tiện ích
+                    <small style="font-weight: 200;" class="text-muted"><p>(chọn những tiện ích bạn có)</p></small>
+                    </h3>
+                </div>
+
+                <div class="input new-util" style="width: 450px;">
+                    <div class="util-item " name="conditioner">
+                        <img src="../images/air-conditioner.png" alt="">
+                        <p>Máy lạnh</p>
+                    </div>
+                    <div class="util-item " name="privateWc">
+                        <img src="../images/wc.png" alt="">
+                        <p>WC riêng</p>
+                    </div>
+                    <div class="util-item " name="parking">
+                        <img src="../images/icons8-motorbike-64.png" alt="">
+                        <p>Chỗ để xe</p>
+                    </div>
+                    <div class="util-item" name="wifi">
+                        <img src="../images/icons8-wi-fi-50.png" alt="">
+                        <p> Wifi/4G </p>
+                    </div>
+                    <div class="util-item" name="freedom">
+                        <img src="../images/icons8-clock-50.png" alt="">
+                        <p>Giờ tự do</p>
+                    </div>
+                    <div class="util-item" name="keyy">
+                        <img src="../images/icons8-heart-key-24.png" alt="">
+                        <p>Khóa riêng</p>
+                    </div>
+                    <div class="util-item" name="bed">
+                        <img src="../images/icons8-bed-50.png" alt="">
+                        <p>Giường</p>
+                    </div>
+                    <div class="util-item" name="kitchen">
+                        <img src="../images/icons8-kitchenwares-50.png" alt="">
+                        <p>Nhà bếp</p>
+                    </div>
+                    <div class="util-item" name="pet">
+                        <img src="../images/icons8-dog-jump-64.png" alt="">
+                        <p>Thú cưng</p>
+                    </div>
+                    <div class="util-item" name="guard">
+                        <img src="../images/icons8-police-50.png" alt="">
+                        <p>An ninh</p>
+                    </div>
+                    <div class="util-item" name="refrigerator">
+                        <img src="../images/icons8-fridge-50.png" alt="">
+                        <p>Tủ lạnh</p>
+                    </div>
+                    <div class="util-item" name="tablee">
+                        <img src="../images/icons8-table-50.png" alt="">
+                        <p>Bàn học</p>
+                    </div>
+                    <div class="util-item" name="windoww">
+                        <img src="../images/icons8-open-window-50.png" alt="">
+                        <p>Cửa sổ</p>
+                    </div>
+                    <div class="util-item" name="waterHeater">
+                        <img src="../images/icons8-hotel-64.png" alt="">
+                        <p>Máy nước nóng</p>
+                    </div>
+                    <div class="util-item" name="closet">
+                        <img src="../images/icons8-closet-50.png" alt="">
+                        <p>Tủ đồ</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- confim -->
+            <div class="fieldset confirm-field">
+                <h3>Xác nhận</h3>
+                <div class="new-phone">
+                    <h5>Số điện thoại: </h5>
+                    <input type="text" name="phoneNumber" id="" placeholder="Nhập vào SĐT của bạn">
+                </div>
+                <div class="new-title">
+                    <h5>Tiêu đề bài đăng</h5>
+                    <input type="text" name="title" id="" placeholder="Nhập vào tiêu đề bài viết">
+                </div>
+                <!-- <div>
+                    <h5>Nội dung mô tả</h5>
+                    <input type="text" name="description" id="" placeholder="Nhập diện tích của một phòng">
+                </div> -->
+                <div class="new-description">
+                    <h5>Nội dung mô tả</h5>
+                    <textarea name="description" id="" cols="100" rows="10"></textarea>
+                </div>
+            </div>
+
+            <div class="wrap-btn">
+                <button class="btn btn-pre">Previous</button>
+                <button class="btn btn-next">Next</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- --------------------------New Posts------------------- -->
+
+    <!-- --------------------------Edit Posts------------------- -->
+    <div class="wrap-new-post-edit">
+        <div class="new-post-edit">
+            <div class="cancel">
+                <i class="uil uil-times btn-cancel"></i>
+            </div>
+            <ul class="progress-bar">
+                <li >Thông tin</li>
+                <li>Địa chỉ</li>
+                <li>Tiện ích</li>
+                <li>Xác nhận</li>
+            </ul>
+    
+            <!-- infor -->
+            <div class="fieldset info-feilds" >
+                <div class="common-info">
+                    <div class="info-field">
+                        <h3>THÔNG TIN PHÒNG</h3>
+                        <!-- <div style="display: flex; align-items: center; justify-content: space-between;"> -->
+                            <div class="new-type-room">
+                                <h5>Loại phòng:</h5>
+                                <div class="new-select-type">
+                                    <div>
+                                        <input type="radio" id="room-type1-edit" name="roomType" value="Phòng cho thuê">
+                                        <label for="room-type1-edit">Phòng cho thuê</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="room-type2-edit" name="roomType" value="Phòng ở ghép">
+                                        <label for="room-type2-edit">Phòng ở ghép</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="room-type3-edit" name="roomType" value="Phòng nhượng lại">
+                                        <label for="room-type3-edit">Phòng nhượng lại</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-input new-size">
+                                <h5>Diện tích:</h5>
+                                <input type="text" name="size" id="" placeholder="(m2)">
+                            </div>
+                        <!-- </div> -->
+                        <div class="new-input new-amount">
+                            <h5>Số lượng phòng:</h5>
+                            <input type="text" name="amount" id="" placeholder="(phòng)">
+                        </div>
+                        <div class="new-input new-capacity">
+                            <h5>Sức chứa:</h5>
+                            <input type="text" name="capacity" id="" placeholder="(người/phòng)">
+                        </div>
+                        <div class="new-gender">
+                            <h5>Giới tính:</h5>
+                            <div class="new-select-gender">
+                                <div>
+                                    <input type="radio" id="gender1" name="gender" value="Tất cả">
+                                    <label for="gender1">Tất cả</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="gender2" name="gender" value="Nam">
+                                    <label for="gender2">Nam</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="gender3" name="gender" value="Nữ">
+                                    <label for="gender3">Nữ</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+    
+                    <div class="cost-field">
+                        <h3>CHI PHÍ</h3>
+                        <div class="new-input new-rent-price">
+                            <h5>Giá cho thuê:</h5>
+                            <input type="text" name="rentPrice" id="" placeholder="(VND/tháng)">
+                        </div>
+                        <div class="new-input new-deposit">
+                            <h5>Đặt cọc:</h5>
+                            <input type="text" name="deposit" id="" placeholder="(VND)">
+                        </div>
+                        <div class="new-input">
+                            <h5>Tiền điện:</h5>
+                            <input type="text" name="electricityPrice" id="" placeholder="(VND/số)">
+                        </div>
+                        <div class="new-input">
+                            <h5>Tiền nước:</h5>
+                            <input type="text" name="waterPrice" id="" placeholder="(VND/tháng)">
+                        </div>
+                        <div class="new-input">
+                            <h5>Internet:</h5>
+                            <input type="text" name="internetPrice" id="" placeholder="(VND/tháng)">
+                        </div>
+                        <div class="new-input">
+                            <h5>Phí giữ xe: <small class="text-muted"><p>(nếu có)</p></small></h5>
+                            <input type="text" name="parkingFee" id="" placeholder="(VND/tháng)">
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+
+            <!-- location -->
+            <div class="fieldset location-field" >
+                <h3>Địa chỉ</h3>
+                <div class="new-location">
+                    <div>
+                        <label for="province_edit">Tỉnh/Thành Phố:</label>
+                        <select name="province" id="province_edit">
+                          <option value="0" selected>Chọn tỉnh/Thành phố</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="district_edit">Quận/Huyện:</label>
+                        <select name="district" id="district_edit">
+                          <option value="0" selected>Chọn Quận/Huyện</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="wards_id">Phường/Xã:</label>
+                        <select name="wards" id="wards_edit">
+                          <option value="0" selected>Chọn Phường/Xã</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- <div class="second-location"> -->
+                    <div class="new-street" >
+                        <label for="new-streetName">Tên đường:</label>
+                        <input type="text" name="streetName" id="new-streetName" placeholder="Nhập và tên đường/xóm/phố">
+                    </div>
+                    <div class="new-house">
+                        <label for="new-houseNumber">Số nhà:</label>
+                        <input type="text" name="houseNumber" id="new-houseNumber" placeholder="Nhập vào số nhà">
+                    </div>
+                <!-- </div> -->
+              </div>
+
+            <!-- images -->
+            <div class="fieldset image-field search-util-room" >
+                <h3>Thêm hình ảnh
+                <small style="font-weight: 200;" class="text-muted"><p>(ít nhất 3 hình ảnh)</p></small>
+                </h3>
+                <div>
+                    <div class="wrap-upload-image">
+                        <div class="view-images">
+                            <!-- <div class="wrap-img">
+                                <img src="../images/profile-1.jpg" alt="">
+                                <span class="${im.id}><i class="uil uil-times"></i></span>
+                            </div> -->
+                        </div>
+                        <input type="file" name="" id="input-image2" class="input-image">
+                        <label for="input-image2" class="add-image">+</label>
+                        
+                    </div>
+                </div>
+                <div class="title">
+                    <h3>Tiện ích
+                    <small style="font-weight: 200;" class="text-muted"><p>(chọn những tiện ích bạn có)</p></small>
+                    </h3>
+                </div>
+
+                <div class="input new-util" style="width: 450px;">
+                    <div class="util-item " name="conditioner">
+                        <img src="../images/air-conditioner.png" alt="">
+                        <p>Máy lạnh</p>
+                    </div>
+                    <div class="util-item " name="privateWc">
+                        <img src="../images/wc.png" alt="">
+                        <p>WC riêng</p>
+                    </div>
+                    <div class="util-item " name="parking">
+                        <img src="../images/icons8-motorbike-64.png" alt="">
+                        <p>Chỗ để xe</p>
+                    </div>
+                    <div class="util-item" name="wifi">
+                        <img src="../images/icons8-wi-fi-50.png" alt="">
+                        <p> Wifi/4G </p>
+                    </div>
+                    <div class="util-item" name="freedom">
+                        <img src="../images/icons8-clock-50.png" alt="">
+                        <p>Giờ tự do</p>
+                    </div>
+                    <div class="util-item" name="keyy">
+                        <img src="../images/icons8-heart-key-24.png" alt="">
+                        <p>Khóa riêng</p>
+                    </div>
+                    <div class="util-item" name="bed">
+                        <img src="../images/icons8-bed-50.png" alt="">
+                        <p>Giường</p>
+                    </div>
+                    <div class="util-item" name="kitchen">
+                        <img src="../images/icons8-kitchenwares-50.png" alt="">
+                        <p>Nhà bếp</p>
+                    </div>
+                    <div class="util-item" name="pet">
+                        <img src="../images/icons8-dog-jump-64.png" alt="">
+                        <p>Thú cưng</p>
+                    </div>
+                    <div class="util-item" name="guard">
+                        <img src="../images/icons8-police-50.png" alt="">
+                        <p>An ninh</p>
+                    </div>
+                    <div class="util-item" name="refrigerator">
+                        <img src="../images/icons8-fridge-50.png" alt="">
+                        <p>Tủ lạnh</p>
+                    </div>
+                    <div class="util-item" name="tablee">
+                        <img src="../images/icons8-table-50.png" alt="">
+                        <p>Bàn học</p>
+                    </div>
+                    <div class="util-item" name="windoww">
+                        <img src="../images/icons8-open-window-50.png" alt="">
+                        <p>Cửa sổ</p>
+                    </div>
+                    <div class="util-item" name="waterHeater">
+                        <img src="../images/icons8-hotel-64.png" alt="">
+                        <p>Máy nước nóng</p>
+                    </div>
+                    <div class="util-item" name="closet">
+                        <img src="../images/icons8-closet-50.png" alt="">
+                        <p>Tủ đồ</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- confim -->
+            <div class="fieldset confirm-field">
+                <h3>Xác nhận</h3>
+                <div class="new-phone">
+                    <h5>Số điện thoại: </h5>
+                    <input type="text" name="phoneNumber" id="" placeholder="Nhập vào SĐT của bạn">
+                </div>
+                <div class="new-title">
+                    <h5>Tiêu đề bài đăng</h5>
+                    <input type="text" name="title" id="" placeholder="Nhập vào tiêu đề bài viết">
+                </div>
+                <!-- <div>
+                    <h5>Nội dung mô tả</h5>
+                    <input type="text" name="description" id="" placeholder="Nhập diện tích của một phòng">
+                </div> -->
+                <div class="new-description">
+                    <h5>Nội dung mô tả</h5>
+                    <textarea name="description" id="" cols="100" rows="10"></textarea>
+                </div>
+            </div>
+
+            <div class="wrap-btn">
+                <button class="btn btn-pre">Previous</button>
+                <button class="btn btn-next">Next</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ------------------------- edit Posts------------------- -->
+
+    <!-- <script type="text/javascript" src="https://unpkg.com/kd-shim-sockjs-client@0.3.4/sockjs-0.3.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js" integrity="sha512-tL4PIUsPy+Rks1go4kQG8M8/ItpRMvKnbBjQm4d2DQnFwgcBYRRN00QdyQnWSCwNMsoY/MfJY8nHp2CzlNdtZA==" crossorigin="anonymous"></script>
+    
+    <script src="../asset/js/comment.js"></script>
+    <script src="../asset/js/posts.js"></script>
+    <script src="../asset/js/init_socket.js"></script>
+    <script src="../asset/js/save.js"></script>
+    <script src="../asset/js/notifications.js"></script>
+    <script src="../asset/js/like.js"></script>
+
+    <script src="../asset/js/slider.js"></script>
+    <script src="../asset/js/profile.js"></script>
+    <script src="../asset/js/comment.js"></script>
+    <script src="../asset/js/new_post.js"></script>
+    <script src="../asset/js/location.js"></script>
+     -->
+    
+    
+	
+    <script type="text/javascript" src="https://unpkg.com/kd-shim-sockjs-client@0.3.4/sockjs-0.3.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js" integrity="sha512-tL4PIUsPy+Rks1go4kQG8M8/ItpRMvKnbBjQm4d2DQnFwgcBYRRN00QdyQnWSCwNMsoY/MfJY8nHp2CzlNdtZA==" crossorigin="anonymous"></script>
+    
+	<script type="text/javascript" th:src="@{/js/init_socket.js}"></script>
+	<script type="text/javascript" th:src="@{/js/save.js}"></script>
+	<script type="text/javascript" th:src="@{/js/notifications.js}"></script>
+	<script type="text/javascript" th:src="@{/js/like.js}"></script>
+	
+    <script type="text/javascript" th:src="@{/js/slider.js}"></script>
+    <script type="text/javascript" th:src="@{/js/profile.js}"></script>
+	<script type="text/javascript" th:src="@{/js/comment.js}"></script>
+	<script type="text/javascript" th:src="@{/js/new_post.js}"></script>
+	<script type="text/javascript" th:src="@{/js/location.js}"></script>
+    
+    
+
+</body>

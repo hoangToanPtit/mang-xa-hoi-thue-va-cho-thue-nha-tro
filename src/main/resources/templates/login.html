@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <!-- <link rel="stylesheet" href="../asset/css/signup.css"> -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/signup.css}"/>
+</head>
+<body>
+    <!-- multistep form -->
+    <form id="msform" class="login">
+        <fieldset>
+            <h2 class="fs-title">Đăng nhập</h2>
+            <h3 class="fs-subtitle">Nếu bạn chưa có tài khoản hãy <a href="http://localhost:8081/signup">Đăng ký</a></h3>
+            <input type="text" name="username" placeholder="UserName" />
+            <input type="password" name="pass" placeholder="Password" />
+            <!-- <input type="password" name="cpass" placeholder="Confirm Password" /> -->
+            <div class="fs-forgot">
+                <div class="remember-checkbox">
+                    <input type="checkbox" name="remember"/>
+                    <p>Remember_Me</p>
+                </div>
+                <a class="form-recovery" href="#">Forgot Password?</a>
+            </div>
+            
+            <input type="button" name="btn_login" class="next action-button" value="Đăng nhập" />
+        </fieldset>
+    </form>
+
+    <!-- <script src="../asset/js/login.js"></script> -->
+    <script type="text/javascript" th:src="@{/js/login.js}"></script>
+</body>
+</html>
+
+<!-- https://codepen.io/atakan/pen/nPOZZR -->

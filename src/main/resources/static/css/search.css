@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    width: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+}
+
+.search-box{
+    width: 500px;
+    margin: 0 auto;
+    background-color: azure;
+}
+
+.search-box .search-location{
+    width: 100%;
+}
+
+.search-box .search-location .title{
+    display: block;
+    width: 100%;
+}
+.search-box .search-location .title h3{
+    width: 100%;
+    margin-top: 10px;
+}

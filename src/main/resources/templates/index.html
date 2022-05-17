@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- iconsout -->
+    <!-- <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS only -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+
+    <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"> -->
+	<!-- <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
+
+    <!-- iconsout -->
+    <!-- <link rel="stylesheet" href="../static/css/home.css"> -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/slider.css}"/>
+    <!-- <link rel="stylesheet" href="../static/css/slider.css" /> -->
+
+    <title>Social media</title>
+</head>
+<body>
+    <nav>
+        <div class="container" style="width: 85%;">
+            <h2 class="log">
+                SocialMedia
+            </h2>
+            <div class="search-bar">
+                <i class="uil uil-search"></i>
+                <input type="search" placeholder="Nhập nội dung tìm kiếm">
+            </div>
+            <div class="create">
+                <a class="btn btn-primary btn_new_post" href="http://localhost:8081/login" style="color: #fff;">Đăng nhập</a>
+                <!-- <div class="profile-photo">
+                    <img src="../images/profile-1.jpg" alt="">
+                </div> -->
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- -----------------------------------Main------------------------------------ -->
+    <main>
+        <div class="container" style="margin-right: 195px;">
+            <!-- ------------------------------Left----------------------------------->
+            <div class="left">
+
+            </div>
+            <!-- -------------------------------------end of left--------------------------------- -->
+
+
+            <!-- ---------------------------------------------Middle------------------------------- -->
+            <div class="middle">
+
+                <!--========= search box=========  -->
+
+                <div class="search-posts-box">
+                    <div class="search-header">
+                        <h2></span>Tìm kiếm nhà trọ<span></h2>
+                        <img src="../images/icons8-google-web-search-64.png" alt="">
+                    </div>
+                    <div class="search-content">
+                        <div class="field search-location">
+                            <div class="title">
+                                <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                <h4>Khu vực</h4>
+                            </div>
+                            <div class="input">
+                                <div>
+                                    <select name="province" id="province-search">
+                                      <option  >Tỉnh/Thành phố</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <select name="district" id="district-search">
+                                      <option >Quận/Huyện</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <select name="wards" id="wards-search">
+                                      <option  >Phường/Xã</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <h5 class="text-bold">Tên đường</h5>
+                                    <input type="text" value="" name="streetName" id="" placeholder="Nhập vào tên đường cần tìm kiếm">
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="field search-cost">
+                            <div class="title">
+                                <span><i class="fa fa-money" aria-hidden="true"></i></span>
+                                <h4>Khoảng giá</h4>
+                            </div>
+    
+                            <div class="input">
+                                <div>
+                                    <select name="firstRentPrice" id="fist-cost">
+                                      <option value="0" selected>Từ: </option>
+                                      <option value="10000000" >1 triệu VND/phòng</option>
+                                      <option value="15000000" >1.5 triệu VND/phòng</option>
+                                      <option value="20000000" >2 triệu VND/phòng</option>
+                                      <option value="25000000" >2.5 triệu VND/phòng</option>
+                                      <option value="30000000" >3 triệu VND/phòng</option>
+                                      <option value="35000000" >3.5 triệu VND/phòng</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <select name="lastRentPrice" id="last-cost">
+                                      <option value="0" selected>Đến: </option>
+                                      <option value="20000000" >2 triệu VND/phòng</option>
+                                      <option value="25000000" >2.5 triệu VND/phòng</option>
+                                      <option value="30000000" >3 triệu VND/phòng</option>
+                                      <option value="35000000" >3.5 triệu VND/phòng</option>
+                                      <option value="40000000" >4 triệu VND/phòng</option>
+                                      <option value="45000000" >4.5 triệu VND/phòng</option>
+                                    </select>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="field search-type-room">
+                            <div class="title">
+                                <span><i class="uil uil-home"></i></span>
+                                <h4>Loại phòng</h4>
+                            </div>
+    
+                            <div class="input">
+                               <div>
+                                   <input type="checkbox" name="roomType" id="topic1" value="Phòng cho thuê">
+                                   <label for="topic1" >Phòng cho thuê</label>
+                               </div>
+                               <div>
+                                   <input type="checkbox" name="roomType" id="topic2" value="Phòng ở ghép">
+                                   <label for="topic2">Phòng ở ghép</label>
+                               </div>
+                               <div>
+                                   <input type="checkbox" name="roomType" id="topic3" value="Phòng nhượng lại">
+                                   <label for="topic3">Phòng nhượng lại</label>
+                               </div>
+                               
+                            </div>
+                        </div>
+    
+                        <div class="field search-size-room">
+                            <div class="title">
+                                <span><i class="uil uil-compress-arrows"></i></span>
+                                <h4>Sức chứa</h4>
+                            </div>
+    
+                            <div class="input">
+                                <div>
+                                    <label for="v">Diện tích: </label>
+                                    <select name="firstSize" id="room-size-first">
+                                      <option value="0" selected>Từ: </option>
+                                      <option value="20" >20 m2</option>
+                                      <option value="30" >30 m2</option>
+                                      <option value="40" >40 m2</option>
+                                      <option value="50" >50 m2</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <select name="lastSize" id="room-size-last">
+                                      <option value="0" selected>Đến: </option>
+                                      <option value="50" >50 m2</option>
+                                      <option value="60" >60 m2</option>
+                                      <option value="70" >70 m2</option>
+                                      <option value="80" >80 m2</option>
+                                      <option value="90" >90 m2</option>
+                                    </select>
+                                </div>
+                                <div style="margin-bottom:10px;">
+                                    <label for="search-amount">Số người: </label>
+                                    <button class="incre-btn">+</button>
+                                    <input type="text" name="capacity" value="0" id="search-amount" placeholder="Nhập vào tên đường cần tìm kiếm">
+                                    <button class="des-btn">-</button>
+                                </div>
+                                <div>
+                                    <label for="gender-search">Giới tính: </label>
+                                    <select name="gender" id="gender-search">
+                                      <option value="Tất cả" selected>Tất cả</option>
+                                      <option value="Nam" >Nam</option>
+                                      <option value="Nữ" >Nữ</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="field search-util-room">
+                            <div class="title">
+                                <span><i class="fa fa-plus-square" aria-hidden="true"></i></span>
+                                <h4>Tiện ích</h4>
+                            </div>
+    
+                            <div class="input">
+                                <div class="util-item " name="conditioner">
+                                    <img src="../images/air-conditioner.png" alt="">
+                                    <p>Máy lạnh</p>
+                                </div>
+                                <div class="util-item " name="privateWc">
+                                    <img src="../images/wc.png" alt="">
+                                    <p>WC riêng</p>
+                                </div>
+                                <div class="util-item " name="parking">
+                                    <img src="../images/icons8-motorbike-64.png" alt="">
+                                    <p>Chỗ để xe</p>
+                                </div>
+                                <div class="util-item" name="wifi">
+                                    <img src="../images/icons8-wi-fi-50.png" alt="">
+                                    <p> Wifi/4G </p>
+                                </div>
+                                <div class="util-item" name="freedom">
+                                    <img src="../images/icons8-clock-50.png" alt="">
+                                    <p>Giờ tự do</p>
+                                </div>
+                                <div class="util-item" name="keyy">
+                                    <img src="../images/icons8-heart-key-24.png" alt="">
+                                    <p>Khóa riêng</p>
+                                </div>
+                                <div class="util-item" name="bed">
+                                    <img src="../images/icons8-bed-50.png" alt="">
+                                    <p>Giường</p>
+                                </div>
+                                <div class="util-item" name="kitchen">
+                                    <img src="../images/icons8-kitchenwares-50.png" alt="">
+                                    <p>Nhà bếp</p>
+                                </div>
+                                <div class="util-item" name="pet">
+                                    <img src="../images/icons8-dog-jump-64.png" alt="">
+                                    <p>Thú cưng</p>
+                                </div>
+                                <div class="util-item" name="guard">
+                                    <img src="../images/icons8-police-50.png" alt="">
+                                    <p>An ninh</p>
+                                </div>
+                                <div class="util-item" name="refrigerator">
+                                    <img src="../images/icons8-fridge-50.png" alt="">
+                                    <p>Tủ lạnh</p>
+                                </div>
+                                <div class="util-item" name="tablee">
+                                    <img src="../images/icons8-table-50.png" alt="">
+                                    <p>Bàn học</p>
+                                </div>
+                                <div class="util-item" name="windoww">
+                                    <img src="../images/icons8-open-window-50.png" alt="">
+                                    <p>Cửa sổ</p>
+                                </div>
+                                <div class="util-item" name="waterHeater">
+                                    <img src="../images/icons8-hotel-64.png" alt="">
+                                    <p>Máy nước nóng</p>
+                                </div>
+                                <div class="util-item" name="closet">
+                                    <img src="../images/icons8-closet-50.png" alt="">
+                                    <p>Tủ đồ</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <button class="btn btn-search-posts">Tìm kiếm</button>
+                    </div>
+                </div>
+
+                <!--========= end of search box=========  -->
+
+                <!-- ---------Feeds--------- -->
+                <div class="feeds">
+
+                    <!-- ---------Test Feed 1--------- -->
+                    <div class="feed" id="p1">
+                        <div class="head">
+                            <div class="user">
+                                <div class="profile-photo">
+                                    <img src="../images/profile-1.jpg" alt="">
+                                </div>
+                                <div class="ingo">
+                                    <h3>Nguyen Van Toan</h3>
+                                    <small>Dubai, 15 Minutes ago</small>
+                                </div>
+                            </div>
+                            <span class="edit">
+                                <i class="uil uil-ellipsis-h"></i>
+                                <!-- <p >Độ phù hợp: 
+                                    <span id="percent_compatible" style="color:var(--color-success); margin-right:5px; font-size: 1rem;" >100%</span>
+                                </p> -->
+                            </span>
+                        </div>
+                        <div class="photo photo_cus">
+                            <!-- <img src="../images/feed-1.jpg" alt="">
+                            <div class="photo_mix_cus">
+                                <img src="../images/feed-2.jpg" alt="">
+                                <img src="../images/feed-3.jpg" alt="">
+                            </div> -->
+                            <!----------------- slider ---------->
+                            <div class="slider">
+                                <i class="fa fa-angle-left slider-prev"></i>
+                                <ul class="slider-dots">
+                                  <li class="slider-dot-item active" data-index="0"></li>
+                                  <li class="slider-dot-item" data-index="1"></li>
+                                  <li class="slider-dot-item" data-index="2"></li>
+                                  <li class="slider-dot-item" data-index="3"></li>
+                                  <li class="slider-dot-item" data-index="4"></li>
+                                </ul>
+                                <div class="slider-wrapper">
+                                  <div class="slider-main">
+                                    <div class="slider-item">
+                                      <img
+                                        src="https://images.unsplash.com/photo-1475809913362-28a064062ccd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div class="slider-item">
+                                      <img
+                                        src="https://images.unsplash.com/photo-1463501810073-6e31c827a9bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div class="slider-item">
+                                      <img
+                                        src="https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div class="slider-item">
+                                      <img
+                                        src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80"
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div class="slider-item">
+                                      <img
+                                        src="https://images.unsplash.com/photo-1470093851219-69951fcbb533?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                        alt=""
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <i class="fa fa-angle-right slider-next"></i>
+                              </div>
+                            <!-- end of slider -->
+
+                        </div>
+
+                        <div class="action-button">
+                            <div class="interaction-buttons">
+                                <span><i class="uil uil-heart btn-heart"></i></span>
+                                <small class="like-number" style="font-size: 0.9rem;">100</small>
+                            </div>
+                            <div class="bookmark">
+                                <span><i class="fa fa-bookmark-o btn_save" aria-hidden="true"></i></span>
+                                <!-- <span><i class="fa fa-bookmark" aria-hidden="true"></i></span> -->
+
+                                <span><i class="uil uil-comment-dots"></i></span>
+                                
+                            </div>
+                        </div>
+
+                        <div class="like-by" style="font-size: 0.8rem;">
+                            <!-- <span><img src="../images/profile-10.jpg" alt=""></span>
+                            <span><img src="../images/profile-11.jpg" alt=""></span>
+                            <span><img src="../images/profile-17.jpg" alt=""></span>
+                            <p>Liked by <b>A</b>, <b>B</b>, <b>C</b> and 1K others</p> -->
+                            <!-- <p>100</p> -->
+                        </div>
+                        
+
+                        <!-- ========chat box========= -->
+                        <div class="chat-box none">
+                            <div class="col-md-12 col-lg-6">
+                                <div class="panel">
+                                    <!--Heading-->
+                                    <div class="panel-heading">
+                                        <div class="panel-control">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn-close-chat-box" data-toggle="dropdown"><i class="uil uil-multiply"></i></button>
+                                            </div>
+                                        </div>
+                                        <h3 class="panel-title">Trò chuyện</h3>
+                                    </div>
+                            
+                                    <!--Widget body-->
+                                    <div id="demo-chat-body" class="collapse in">
+                                        <div class="nano has-scrollbar" style="height:400px">
+                                            <div class="nano-content pad-all" tabindex="0" style="right: -17px;">
+                                                <ul class="list-unstyled media-block chat-block">
+                                                    <li class="mar-btm">
+                                                        <div class="media-left profile-photo">
+                                                            <img src="../images/profile-11.jpg" class="img-circle img-sm" alt="Profile Picture">
+                                                        </div>
+                                                        <div class="media-body pad-hor">
+                                                            <div class="speech">
+                                                                <a href="#" class="media-heading">John Doe</a>
+                                                                <p>Hello Lucy, how can I help you today ?</p>
+                                                                <p class="speech-time">
+                                                                <i class="fa fa-clock-o fa-fw"></i>09:23AM
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="mar-btm">
+                                                        <div class="media-right profile-photo">
+                                                            <img src="../images/profile-12.jpg" class="img-circle img-sm" alt="Profile Picture">
+                                                        </div>
+                                                        <div class="media-body pad-hor speech-right">
+                                                            <div class="speech">
+                                                                <a href="#" class="media-heading">Lucy Doe</a>
+                                                                <p>Hi, I want to buy a new shoes.</p>
+                                                                <p class="speech-time">
+                                                                    <i class="fa fa-clock-o fa-fw"></i> 09:23AM
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="mar-btm">
+                                                        <div class="media-left profile-photo">
+                                                            <img src="../images/profile-1.jpg" class="img-circle img-sm" alt="Profile Picture">
+                                                        </div>
+                                                        <div class="media-body pad-hor">
+                                                            <div class="speech">
+                                                                <a href="#" class="media-heading">John Doe</a>
+                                                                <p>Shipment is free. You\'ll get your shoes tomorrow!</p>
+                                                                <p class="speech-time">
+                                                                    <i class="fa fa-clock-o fa-fw"></i> 09:25
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="mar-btm">
+                                                        <div class="media-right profile-photo">
+                                                            <img src="../images/profile-8.jpg" class="img-circle img-sm" alt="Profile Picture">
+                                                        </div>
+                                                        <div class="media-body pad-hor speech-right">
+                                                            <div class="speech">
+                                                                <a href="#" class="media-heading">Lucy Doe</a>
+                                                                <p>Wow, that\'s great!</p>
+                                                                <p class="speech-time">
+                                                                    <i class="fa fa-clock-o fa-fw"></i> 09:27
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="mar-btm">
+                                                        <div class="media-right profile-photo">
+                                                            <img src="../images/profile-5.jpg" class="img-circle img-sm" alt="Profile Picture">
+                                                        </div>
+                                                        <div class="media-body pad-hor speech-right">
+                                                            <div class="speech">
+                                                                <a href="#" class="media-heading">Lucy Doe</a>
+                                                                <p>Ok. Thanks for the answer. Appreciated.</p>
+                                                                <p class="speech-time">
+                                                                <i class="fa fa-clock-o fa-fw"></i> 09:28
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="mar-btm">
+                                                        <div class="media-left profile-photo">
+                                                            <img src="../images/profile-15.jpg" class="img-circle img-sm" alt="Profile Picture">
+                                                        </div>
+                                                        <div class="media-body pad-hor">
+                                                            <div class="speech">
+                                                                <a href="#" class="media-heading">John Doe</a>
+                                                                <p>You are welcome! <br> Is there anything else I can do for you today?</p>
+                                                                <p class="speech-time">
+                                                                    <i class="fa fa-clock-o fa-fw"></i> 09:30
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="mar-btm">
+                                                        <div class="media-right profile-photo">
+                                                            <img src="../images/profile-16.jpg" class="img-circle img-sm" alt="Profile Picture">
+                                                        </div>
+                                                        <div class="media-body pad-hor speech-right">
+                                                            <div class="speech">
+                                                                <a href="#" class="media-heading">Lucy Doe</a>
+                                                                <p>Nope, That\'s it.</p>
+                                                                <p class="speech-time">
+                                                                    <i class="fa fa-clock-o fa-fw"></i> 09:31
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="mar-btm">
+                                                        <div class="media-left profile-photo">
+                                                            <img src="../images/profile-19.jpg" class="img-circle img-sm" alt="Profile Picture">
+                                                        </div>
+                                                        <div class="media-body pad-hor">
+                                                            <div class="speech">
+                                                                <a href="#" class="media-heading">John Doe</a>
+                                                                <p>Thank you for contacting us today</p>
+                                                                <p class="speech-time">
+                                                                    <i class="fa fa-clock-o fa-fw"></i> 09:32
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        <div class="nano-pane"><div class="nano-slider" style="height: 141px; transform: translate(0px, 0px);"></div></div></div>
+                            
+                                        <!--Widget footer-->
+                                        <div class="panel-footer">
+                                            <!-- <div class="row"> -->
+                                                <div class="col-xs-9">
+                                                    <input class="input-chat form-control chat-input" type="text" placeholder="Viết bình luận của bạn">
+                                                </div>
+                                                <div class="col-xs-3 btn-send-chat">
+                                                    <img src="../images/icons8-send-64.png" alt="">
+                                                </div>
+                                            <!-- </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- ========end of chat box========= -->
+
+                        <!-- ====== Comment========= -->
+                        <div class="none comment-box">
+                            <div class="new-comment">
+                                <div class="avt">
+                                    <img src="../images/profile-1.jpg" alt="">
+                                </div>
+                                <div class="new-comment-input">
+                                    <input type="text" name="" id="" placeholder="NHap vao binh luan cua ban">
+                                    <div class="btn-send-comment"><i class="uil uil-message"></i></div>
+                                    <input type="button" value="abc">
+                                </div>
+                            </div>
+
+                            <div class="wrap-comment">
+                                <div class="comment">
+                                    <div class="avt">
+                                        <img src="../images/profile-1.jpg" alt="">
+                                    </div>
+                                    
+                                    <div class="wrap-text">
+                                        <div class="info">
+                                            <h4>Nguyen Van Toan</h4>
+                                            <span>2h ago</span>
+                                        </div>
+                                        <div class="content">
+                                            <p>Con phong khong ban oi</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="btn-rep">
+                                        <button>Phản hồi</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="comment">
+                                    <div class="avt">
+                                        <img src="../images/profile-1.jpg" alt="">
+                                    </div>
+                                    
+                                    <div class="wrap-text">
+                                        <div class="info">
+                                            <h4>Nguyen Van Toan</h4>
+                                            <span>2h ago</span>
+                                        </div>
+                                        <div class="content">
+                                            <p>Con phong khong ban oi</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="btn-rep">
+                                        <button>Phản hồi</button>
+                                    </div>
+                                </div>
+
+                                <div class="comment">
+                                    <div class="avt">
+                                        <img src="../images/profile-1.jpg" alt="">
+                                    </div>
+                                    
+                                    <div class="wrap-text">
+                                        <div class="info">
+                                            <h4>Nguyen Van Toan</h4>
+                                            <span>2h ago</span>
+                                        </div>
+                                        <div class="content">
+                                            <p>Con phong khong ban oi</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="btn-rep">
+                                        <button>Phản hồi</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        
+                        
+
+                        <!-- ====== End of Comment========= -->
+
+
+                        <div>
+                            <p class="post-title">Phòng cho thuê Triều Khúc</p>
+                        </div>
+                        <div class="post-location">
+                            <img src="../images/icons8-location-48.png" alt="">
+                            <p>Sô 3, ngõ 137 Triều Khúc, Tân Triều, Thanh Trì, Hà Nội</p>
+                        </div>
+                        <div class="post-rent-price">
+                            GIÁ THUÊ: <span>5,000,000</span> VND/Phòng<br>
+                        </div>
+                        <div class="post-info-top">
+                            <div class="post-info-top-item post-amount-room">
+                                <p>SỐ PHÒNG</p>
+                                <span>5</span>
+                            </div>
+                            <div class="post-info-top-item post-size">
+                                <p>DIỆN TÍCH</p>
+                                <span>50 M2</span>
+                            </div>
+                            <div class="post-info-top-item post-capacity">
+                                <p>SỨC CHỨA</p>
+                                <span>2 
+                                    <img src="../images/icons8-male-50.png" alt="">
+                                    <img src="../images/icons8-female-50.png" alt="">
+                                </span>
+                            </div>
+                            <div class="post-info-top-item post-deposit" >
+                                <p>ĐẶT CỌC</p>
+                                <span>1tr</span>
+                            </div>
+                
+                        </div>
+                        <div class="post-info-second">
+                            <div class="post-info-second-item post-amount-room">
+                                <img src="../images/icons8-light-80.png" alt="">
+                                <span>4k</span>
+                            </div>
+                            <div class="post-info-second-item post-size">
+                                <img src="../images/icons8-water-50.png" alt="">
+                                <span>100k</span>
+                            </div>
+                            <div class="post-info-second-item post-capacity">
+                                <img src="../images/icons8-wi-fi-32.png" alt="">
+                                <span>100k</span>
+                            </div>
+                            <div class="post-info-second-item post-deposit" >
+                                <img src="../images/icons8-motorbike-64.png" alt="">
+                                <span>50k</span>
+                            </div>
+                
+                        </div>
+
+                        <div class="post-description none">
+                            <h5>Chi tiết</h5>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                                Molestias dolorum tenetur nam accusantium sapiente quod omnis 
+                                ipsa quo at mollitia dicta officiis, vitae nesciunt ea fugiat
+                                 commodi. Maxime, maiores suscipit!</p>
+                        </div>
+  
+
+                        <div class="none post-uitls field search-util-room util-room">
+                            <div class="title">
+                                <h5>Tiện ích</h5>
+                            </div>
+    
+                            <div class="input" style="width: 450px;">
+                                <div class="util-item " name="conditioner">
+                                    <img src="../images/air-conditioner.png" alt="">
+                                    <p>Máy lạnh</p>
+                                </div>
+                                <div class="util-item " name="privateWc">
+                                    <img src="../images/wc.png" alt="">
+                                    <p>WC riêng</p>
+                                </div>
+                                <div class="util-item " name="parking">
+                                    <img src="../images/icons8-motorbike-64.png" alt="">
+                                    <p>Chỗ để xe</p>
+                                </div>
+                                <div class="util-item" name="wifi">
+                                    <img src="../images/icons8-wi-fi-50.png" alt="">
+                                    <p> Wifi/4G </p>
+                                </div>
+                                <div class="util-item" name="freedom">
+                                    <img src="../images/icons8-clock-50.png" alt="">
+                                    <p>Giờ tự do</p>
+                                </div>
+                                <div class="util-item" name="keyy">
+                                    <img src="../images/icons8-heart-key-24.png" alt="">
+                                    <p>Khóa riêng</p>
+                                </div>
+                                <div class="util-item" name="bed">
+                                    <img src="../images/icons8-bed-50.png" alt="">
+                                    <p>Giường</p>
+                                </div>
+                                <div class="util-item" name="kitchen">
+                                    <img src="../images/icons8-kitchenwares-50.png" alt="">
+                                    <p>Nhà bếp</p>
+                                </div>
+                                <div class="util-item" name="pet">
+                                    <img src="../images/icons8-dog-jump-64.png" alt="">
+                                    <p>Thú cưng</p>
+                                </div>
+                                <div class="util-item" name="guard">
+                                    <img src="../images/icons8-police-50.png" alt="">
+                                    <p>An ninh</p>
+                                </div>
+                                <div class="util-item" name="refrigerator">
+                                    <img src="../images/icons8-fridge-50.png" alt="">
+                                    <p>Tủ lạnh</p>
+                                </div>
+                                <div class="util-item" name="tablee">
+                                    <img src="../images/icons8-table-50.png" alt="">
+                                    <p>Bàn học</p>
+                                </div>
+                                <div class="util-item" name="windoww">
+                                    <img src="../images/icons8-open-window-50.png" alt="">
+                                    <p>Cửa sổ</p>
+                                </div>
+                                <div class="util-item" name="waterHeater">
+                                    <img src="../images/icons8-hotel-64.png" alt="">
+                                    <p>Máy nước nóng</p>
+                                </div>
+                                <div class="util-item" name="closet">
+                                    <img src="../images/icons8-closet-50.png" alt="">
+                                    <p>Tủ đồ</p>
+                                </div>
+                            </div>    
+                        </div>
+
+
+                        <div class="post-up-down">Xem thêm <i class="fa fa-angle-down" aria-hidden="true"></i></div>
+                        <!-- <i class="fa fa-angle-up" aria-hidden="true"></i> -->
+                    </div>
+            
+
+                    <!-- ---------End of Test Feed 1--------- -->
+
+                    <!-- ---------Feed 1--------- -->
+                    <div class="feed">
+                        <div class="head">
+                            <div class="user">
+                                <div class="profile-photo">
+                                    <img src="../images/profile-1.jpg" alt="">
+                                </div>
+                                <div class="ingo">
+                                    <h3>Nguyen Van Toan</h3>
+                                    <small>Dubai, 15 Minutes ago</small>
+                                </div>
+                            </div>
+                            <span class="edit">
+                                <i class="uil uil-ellipsis-h"></i>
+                            </span>
+                        </div>
+                        <div class="photo">
+                            <img src="../images/feed-1.jpg" alt="">
+                        </div>
+
+                        <div class="action-button">
+                            <div class="interaction-buttons">
+                                <span><i class="uil uil-heart"></i></span>
+                                <span><i class="uil uil-comment-dots"></i></span>
+                            </div>
+                            <div class="bookmark">
+                                <span><i class="uil uil-bookmark-full"></i></span>
+
+                            </div>
+                        </div>
+
+                        <div class="like-by">
+                            <span><img src="../images/profile-10.jpg" alt=""></span>
+                            <span><img src="../images/profile-11.jpg" alt=""></span>
+                            <span><img src="../images/profile-17.jpg" alt=""></span>
+                            <p>Liked by <b>A</b>, <b>B</b>, <b>C</b> and 1K others</p>
+                        </div>
+
+                        <div class="caption">
+                            <p><b>Hoang Toan</b> Lorem ipsum dolor sit amet consectetur adipisicing 
+                                elit. Facilis, dolore. Ipsam veniam sapiente, vel dolor eligendi, 
+                                voluptates quam itaque, cum perferendis ut corrupti maiores ad magni 
+                                fugiat natus saepe unde?
+                                <span class="harsh-tag">#NamDinh</span>
+                            </p>
+                        </div>
+
+                        
+                            
+                        </div>
+
+                        <div class="comments text-muted">View all 277 comments</div>
+                    </div>
+                    <!-- ---------End of Feed 1--------- -->
+
+
+                </div>
+                <!-- ---------End of Feeds --------- -->
+
+            
+            <!-- -----------------------------End of middle------------------------------- -->
+
+            <!-- ---------------------------------Right------------------------------------- -->
+            
+            <div class="right">
+
+
+                <div class="btn-search-box">
+                    <a href="#">
+                        <!-- <h4>Tìm kiếm chi tiết</h4> -->
+                        <span><i class="uil uil-search-alt"></i></span>
+                        <h4>Tìm kiếm chi tiết</h4>
+                    </a>
+                </div>
+
+
+                <!-- ------------- Quick Search ------------ -->
+                <div class="quick-search">
+                    <div class="heading">
+                        <h4>Tìm kiếm nhanh</h4>
+                        <img src="../images/icons8-google-web-search-64.png" alt="">
+                    </div>
+                    <div class="field search-location">
+                        <div class="title">
+                            <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                            <h4>Khu vực</h4>
+                        </div>
+                        <div class="input">
+                            <div>
+                                <select name="province" id="province-q-search">
+                                    <option  >Tỉnh/Thành phố</option>
+                                </select>
+                            </div>
+                            <div>
+                                <select name="district" id="district-q-search">
+                                    <option >Quận/Huyện</option>
+                                </select>
+                            </div>
+                            <div>
+                                <select name="wards" id="wards-q-search">
+                                    <option  >Phường/Xã</option>
+                                </select>
+                            </div>
+                            <!-- <div>
+                                <h5 class="text-bold">Tên đường</h5>
+                                <input type="text" value="" name="streetName" id="" placeholder="Tên đường">
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="field search-cost">
+                        <div class="title">
+                            <span><i class="fa fa-money" aria-hidden="true"></i></span>
+                            <h4>Khoảng giá</h4>
+                        </div>
+
+                        <div class="input">
+                            <div>
+                                <select name="firstRentPrice" id="fist-cost">
+                                    <option value="0" selected>Từ: </option>
+                                    <option value="10000000" >1 triệu VND/phòng</option>
+                                    <option value="15000000" >1.5 triệu VND/phòng</option>
+                                    <option value="20000000" >2 triệu VND/phòng</option>
+                                    <option value="25000000" >2.5 triệu VND/phòng</option>
+                                    <option value="30000000" >3 triệu VND/phòng</option>
+                                    <option value="35000000" >3.5 triệu VND/phòng</option>
+                                </select>
+                            </div>
+                            <div>
+                                <select name="lastRentPrice" id="last-cost">
+                                    <option value="0" selected>Đến: </option>
+                                    <option value="20000000" >2 triệu VND/phòng</option>
+                                    <option value="25000000" >2.5 triệu VND/phòng</option>
+                                    <option value="30000000" >3 triệu VND/phòng</option>
+                                    <option value="35000000" >3.5 triệu VND/phòng</option>
+                                    <option value="40000000" >4 triệu VND/phòng</option>
+                                    <option value="45000000" >4.5 triệu VND/phòng</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="field search-type-room">
+                        <div class="title">
+                            <span><i class="uil uil-home"></i></span>
+                            <h4>Loại phòng</h4>
+                        </div>
+
+                        <div class="input">
+                            <div>
+                                <input type="checkbox" name="roomType" id="topic-q-1" value="Phòng cho thuê">
+                                <label for="topic-q-1" >Phòng cho thuê</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="roomType" id="topic-q-2" value="Phòng ở ghép">
+                                <label for="topic-q-2">Phòng ở ghép</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="roomType" id="topic-q-3" value="Phòng nhượng lại">
+                                <label for="topic-q-3">Phòng nhượng lại</label>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- ------------- End of Quick Search ------------ -->
+
+                <div class="btn-login-or-signup">
+                    <a href="http://localhost:8081/login">
+                        <p>Đăng nhập / Đăng ký</p>
+                    </a>
+                </div>
+
+
+            </div>
+            <!-- -----------------------------------End of Main------------------------------- -->
+
+        </div>
+    </main>
+
+    <!-- --------------------------Theme customization------------------- -->
+    <div class="customize-theme">
+        <div class="card">
+            <h2>Customize your view</h2>
+            <p class="text-muted">Manage your font size, color, and background.</p>
+
+            <!-- ----------Fonts---------- -->
+            <div class="font-size">
+                <h4>Font Size</h4>
+                <div>
+                    <h6>Aa</h6>
+                    <div class="choose-size">
+                        <span class="font-size-1"></span>
+                        <span class="font-size-2 "></span>
+                        <span class="font-size-3 active"></span>
+                        <span class="font-size-4"></span>
+                        <span class="font-size-5"></span>
+                    </div>
+                    <h3>Aa</h3>
+                </div>
+            </div>
+
+            <!-- ----------Primary color--------- -->
+            <div class="color">
+                <h4>Color</h4>
+                <div class="choose-color">
+                    <span class="color-1 active"></span>
+                    <span class="color-2"></span>
+                    <span class="color-3"></span>
+                    <span class="color-4"></span>
+                    <span class="color-5"></span>
+                </div>
+            </div>
+
+            <!-- -----------Background colors------------- -->
+            <div class="background">
+                <h4>Background</h4>
+                <div class="choose-bg">
+                    <div class="bg-1 active">
+                        <span></span>
+                        <h5 for="bg-1">Light</h5>
+                    </div>
+                    <div class="bg-2">
+                        <span></span>
+                        <h5 for="bg-2">Dim</h5>
+                    </div>
+                    <div class="bg-3">
+                        <span></span>
+                        <h5 for="bg-2">Lights Out</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- --------------------------New Posts------------------- -->
+    <div class="wrap-new-post">
+        <div class="new-post">
+            <div class="cancel">
+                <i class="uil uil-times btn-cancel"></i>
+            </div>
+            <ul class="progress-bar">
+                <li >Thông tin</li>
+                <li>Địa chỉ</li>
+                <li>Tiện ích</li>
+                <li>Xác nhận</li>
+            </ul>
+    
+            <!-- infor -->
+            <div class="fieldset info-feilds" >
+                <div class="common-info">
+                    <div class="info-field">
+                        <h3>THÔNG TIN PHÒNG</h3>
+                        <!-- <div style="display: flex; align-items: center; justify-content: space-between;"> -->
+                            <div class="new-type-room">
+                                <h5>Loại phòng:</h5>
+                                <div class="new-select-type">
+                                    <div>
+                                        <input type="radio" id="room-type1" name="roomType" value="Phòng cho thuê">
+                                        <label for="room-type1">Phòng cho thuê</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="room-type2" name="roomType" value="Phòng ở ghép">
+                                        <label for="room-type2">Phòng ở ghép</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="room-type3" name="roomType" value="Nhà nguyên căn">
+                                        <label for="room-type3">Nhà nguyên căn</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-input new-size">
+                                <h5>Diện tích:</h5>
+                                <input type="text" name="size" id="" placeholder="(m2)">
+                            </div>
+                        <!-- </div> -->
+                        <div class="new-input new-amount">
+                            <h5>Số lượng phòng:</h5>
+                            <input type="text" name="amount" id="" placeholder="(phòng)">
+                        </div>
+                        <div class="new-input new-capacity">
+                            <h5>Sức chứa:</h5>
+                            <input type="text" name="capacity" id="" placeholder="(người/phòng)">
+                        </div>
+                        <div class="new-gender">
+                            <h5>Giới tính:</h5>
+                            <div class="new-select-gender">
+                                <div>
+                                    <input type="radio" id="gender1" name="gender" value="Tất cả">
+                                    <label for="gender1">Tất cả</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="gender2" name="gender" value="Nam">
+                                    <label for="gender2">Nam</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="gender3" name="gender" value="Nữ">
+                                    <label for="gender3">Nữ</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+    
+                    <div class="cost-field">
+                        <h3>CHI PHÍ</h3>
+                        <div class="new-input new-rent-price">
+                            <h5>Giá cho thuê:</h5>
+                            <input type="text" name="rentPrice" id="" placeholder="(VND/tháng)">
+                        </div>
+                        <div class="new-input new-deposit">
+                            <h5>Đặt cọc:</h5>
+                            <input type="text" name="deposit" id="" placeholder="(VND)">
+                        </div>
+                        <div class="new-input">
+                            <h5>Tiền điện:</h5>
+                            <input type="text" name="electricityPrice" id="" placeholder="(VND/số)">
+                        </div>
+                        <div class="new-input">
+                            <h5>Tiền nước:</h5>
+                            <input type="text" name="waterPrice" id="" placeholder="(VND/tháng)">
+                        </div>
+                        <div class="new-input">
+                            <h5>Internet:</h5>
+                            <input type="text" name="internetPrice" id="" placeholder="(VND/tháng)">
+                        </div>
+                        <div class="new-input">
+                            <h5>Phí giữ xe: <small class="text-muted"><p>(nếu có)</p></small></h5>
+                            <input type="text" name="parkingFee" id="" placeholder="(VND/tháng)">
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+
+            <!-- location -->
+            <div class="fieldset location-field" >
+                <h3>Địa chỉ</h3>
+                <div class="new-location">
+                    <div>
+                        <label for="province">Tỉnh/Thành Phố:</label>
+                        <select name="province" id="province">
+                          <option value="0" selected>Chọn tỉnh/Thành phố</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="district">Quận/Huyện:</label>
+                        <select name="district" id="district">
+                          <option value="0">Chọn Quận/Huyện</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="wards">Phường/Xã:</label>
+                        <select name="wards" id="wards">
+                          <option value="0" selected>Chọn Phường/Xã</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- <div class="second-location"> -->
+                    <div class="new-street" >
+                        <label for="new-streetName">Tên đường:</label>
+                        <input type="text" name="streetName" id="new-streetName" placeholder="Nhập và tên đường/xóm/phố">
+                    </div>
+                    <div class="new-house">
+                        <label for="new-houseNumber">Số nhà:</label>
+                        <input type="text" name="houseNumber" id="new-houseNumber" placeholder="Nhập vào số nhà">
+                    </div>
+                <!-- </div> -->
+              </div>
+
+            <!-- images -->
+            <div class="fieldset image-field search-util-room" >
+                <h3>Thêm hình ảnh
+                <small style="font-weight: 200;" class="text-muted"><p>(ít nhất 3 hình ảnh)</p></small>
+                </h3>
+                <div>
+                    <div class="wrap-upload-image">
+                        <div class="view-images">
+                            <!-- <div class="wrap-img">
+                                <img src="../images/profile-1.jpg" alt="">
+                                <span><i class="uil uil-times"></i></span>
+                            </div>
+                            <div class="wrap-img">
+                                <img src="../images/profile-1.jpg" alt="">
+                                <span><i class="uil uil-times"></i></span>
+                            </div>
+                            <div class="wrap-img">
+                                <img src="../images/profile-1.jpg" alt="">
+                                <span><i class="uil uil-times"></i></span>
+                            </div> -->
+                        </div>
+                        <input type="file" name="" id="input-image" class="input-image">
+                        <label for="input-image" class="add-image">+</label>
+                        
+                    </div>
+                </div>
+                <div class="title">
+                    <h3>Tiện ích
+                    <small style="font-weight: 200;" class="text-muted"><p>(chọn những tiện ích bạn có)</p></small>
+                    </h3>
+                </div>
+
+                <div class="input new-util" style="width: 450px;">
+                    <div class="util-item " name="conditioner">
+                        <img src="../images/air-conditioner.png" alt="">
+                        <p>Máy lạnh</p>
+                    </div>
+                    <div class="util-item " name="privateWc">
+                        <img src="../images/wc.png" alt="">
+                        <p>WC riêng</p>
+                    </div>
+                    <div class="util-item " name="parking">
+                        <img src="../images/icons8-motorbike-64.png" alt="">
+                        <p>Chỗ để xe</p>
+                    </div>
+                    <div class="util-item" name="wifi">
+                        <img src="../images/icons8-wi-fi-50.png" alt="">
+                        <p> Wifi/4G </p>
+                    </div>
+                    <div class="util-item" name="freedom">
+                        <img src="../images/icons8-clock-50.png" alt="">
+                        <p>Giờ tự do</p>
+                    </div>
+                    <div class="util-item" name="keyy">
+                        <img src="../images/icons8-heart-key-24.png" alt="">
+                        <p>Khóa riêng</p>
+                    </div>
+                    <div class="util-item" name="bed">
+                        <img src="../images/icons8-bed-50.png" alt="">
+                        <p>Giường</p>
+                    </div>
+                    <div class="util-item" name="kitchen">
+                        <img src="../images/icons8-kitchenwares-50.png" alt="">
+                        <p>Nhà bếp</p>
+                    </div>
+                    <div class="util-item" name="pet">
+                        <img src="../images/icons8-dog-jump-64.png" alt="">
+                        <p>Thú cưng</p>
+                    </div>
+                    <div class="util-item" name="guard">
+                        <img src="../images/icons8-police-50.png" alt="">
+                        <p>An ninh</p>
+                    </div>
+                    <div class="util-item" name="refrigerator">
+                        <img src="../images/icons8-fridge-50.png" alt="">
+                        <p>Tủ lạnh</p>
+                    </div>
+                    <div class="util-item" name="tablee">
+                        <img src="../images/icons8-table-50.png" alt="">
+                        <p>Bàn học</p>
+                    </div>
+                    <div class="util-item" name="windoww">
+                        <img src="../images/icons8-open-window-50.png" alt="">
+                        <p>Cửa sổ</p>
+                    </div>
+                    <div class="util-item" name="waterHeater">
+                        <img src="../images/icons8-hotel-64.png" alt="">
+                        <p>Máy nước nóng</p>
+                    </div>
+                    <div class="util-item" name="closet">
+                        <img src="../images/icons8-closet-50.png" alt="">
+                        <p>Tủ đồ</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- confim -->
+            <div class="fieldset confirm-field">
+                <h3>Xác nhận</h3>
+                <div class="new-phone">
+                    <h5>Số điện thoại: </h5>
+                    <input type="text" name="phoneNumber" id="" placeholder="Nhập vào SĐT của bạn">
+                </div>
+                <div class="new-title">
+                    <h5>Tiêu đề bài đăng</h5>
+                    <input type="text" name="title" id="" placeholder="Nhập vào tiêu đề bài viết">
+                </div>
+                <!-- <div>
+                    <h5>Nội dung mô tả</h5>
+                    <input type="text" name="description" id="" placeholder="Nhập diện tích của một phòng">
+                </div> -->
+                <div class="new-description">
+                    <h5>Nội dung mô tả</h5>
+                    <textarea name="description" id="" cols="100" rows="10"></textarea>
+                </div>
+            </div>
+
+            <div class="wrap-btn">
+                <button class="btn btn-pre">Previous</button>
+                <button class="btn btn-next">Next</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- --------------------------New Posts------------------- -->
+
+
+    <!-- <script src="https://unpkg.com/kd-shim-sockjs-client@0.3.4/sockjs-0.3.4.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js" integrity="sha512-tL4PIUsPy+Rks1go4kQG8M8/ItpRMvKnbBjQm4d2DQnFwgcBYRRN00QdyQnWSCwNMsoY/MfJY8nHp2CzlNdtZA==" crossorigin="anonymous"></script> -->
+    <!-- <script src="../asset/js/init_socket.js"></script> -->
+    <!-- <script src="https://unpkg.com/kd-shim-sockjs-client@0.3.4/sockjs-0.3.4.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script> -->
+    
+   <!--  <script src="../asset/js/slider.js"></script>
+    
+    <script type="text/javascript" src="https://unpkg.com/kd-shim-sockjs-client@0.3.4/sockjs-0.3.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js" integrity="sha512-tL4PIUsPy+Rks1go4kQG8M8/ItpRMvKnbBjQm4d2DQnFwgcBYRRN00QdyQnWSCwNMsoY/MfJY8nHp2CzlNdtZA==" crossorigin="anonymous"></script>
+    
+    <script src="../asset/js/init_socket.js"></script>
+    <script src="../asset/js/profile.js"></script>
+    <script src="../asset/js/like.js"></script>
+
+    <script src="../asset/js/notifications.js"></script>
+    <script src="../asset/js/save.js"></script>
+    <script src="../asset/js/index.js"></script>
+    <script src="../asset/js/comment.js"></script>
+    <script src="../asset/js/home.js"></script>
+    <script src="../asset/js/new_post.js"></script>
+    <script src="../asset/js/location.js"></script>
+    <script src="../asset/js/search.js"></script>
+    <script src="../asset/js/quickSearch.js"></script> -->
+    
+    <script type="text/javascript" th:src="@{/js/slider.js}"></script>
+	
+    <script type="text/javascript" src="https://unpkg.com/kd-shim-sockjs-client@0.3.4/sockjs-0.3.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js" integrity="sha512-tL4PIUsPy+Rks1go4kQG8M8/ItpRMvKnbBjQm4d2DQnFwgcBYRRN00QdyQnWSCwNMsoY/MfJY8nHp2CzlNdtZA==" crossorigin="anonymous"></script>
+    
+	<script type="text/javascript" th:src="@{/js/init_socket.js}"></script>
+	<script type="text/javascript" th:src="@{/js/like.js}"></script>
+	<script type="text/javascript" th:src="@{/js/save.js}"></script>
+	<script type="text/javascript" th:src="@{/js/comment.js}"></script>
+	<script type="text/javascript" th:src="@{/js/home.js}"></script>
+	<script type="text/javascript" th:src="@{/js/location.js}"></script>
+	<script type="text/javascript" th:src="@{/js/search.js}"></script>
+	<script type="text/javascript" th:src="@{/js/quickSearch.js}"></script>
+</body>
+</html>
