@@ -17,8 +17,6 @@ public class PostConverter {
 	@Autowired
 	private UserConverter userConverter;
 
-//	@Autowired
-//	private PostRepository postRepository;
 	
 	public PostEntity toEntity(PostDTO dto) {
 		PostEntity entity = new PostEntity();
@@ -103,10 +101,8 @@ public class PostConverter {
 		dto.setTopic(topicConverter.toDto(entity.getTopic()));
 		dto.setAuthorUser(userConverter.toDTO(entity.getAuthorUser()));
 		dto.getAuthorUser().setPassword(null);
-//		dto.getAuthorUser().setId(null);
 		dto.getAuthorUser().setUserName(null);
 		
-//		dto.setLike(postRepository.countLike(dto.getId()));
 		
 		SimpleDateFormat smp = new SimpleDateFormat("dd/MM/yyyy");
 		if(entity.getCreatedDate()!=null)
@@ -222,8 +218,6 @@ public class PostConverter {
 			entity.setTitle(title);
 		if (description != null)
 			entity.setDescription(description);
-//		TopicDTO topic = dto.getTopic();
-//		UserDTO authorUser = dto.getAuthorUser();
 
 		return entity;
 	}

@@ -16,7 +16,6 @@ public class ResultDTO implements Comparable<ResultDTO>{
 	
 	private void fsetScore(PostConditionDTO postCondition) {
 		
-//		System.out.println(postCondition);
 		
 		int res = 0;
 		int total = 0;
@@ -116,7 +115,6 @@ public class ResultDTO implements Comparable<ResultDTO>{
 			total += 20;
 			if(postCondition.getProvince().equals(post.getProvince())) {
 				res+=20;
-				System.out.println("pro: " + total);
 			}
 			else {
 				lc=0;
@@ -128,7 +126,6 @@ public class ResultDTO implements Comparable<ResultDTO>{
 		if(roomTypes.size()>0) {
 			bl = 0;
 			for (String str : roomTypes) {
-//				System.out.println("type:  "+ str+"  post:"+post.getRoomType());
 				if(str.equals(post.getRoomType())) {
 					bl=1; break;
 				}

@@ -18,6 +18,14 @@ input_el.forEach((e, i) => {
   })
 });
 
+input_el[4].addEventListener('blur', () => {
+  if (input_el[4].value!="" && input_el[4].value.length<8){
+    err[4].textContent="*Mật khẩu yêu cầu ít nhất 8 ký tự!"
+  }else if(input_el[4].value.length>=8){
+		err[4].textContent="";
+	}
+})
+
 input_el[5].addEventListener('blur', () => {
   if(input_el[5].value!="" && input_el[5].value!=input_el[4].value){
     err[5].textContent="*Nhắc lại mật khẩu không chính xác"
@@ -36,9 +44,9 @@ input_el[6].addEventListener('click', async() => {
     user.email = input_el[2].value;
     user.userName = input_el[3].value;
     user.password = input_el[4].value;
-    user.avt = {
+    /*user.avt = {
       id : 1
-    }
+    }*/
     if(btn_role[0].classList.value.includes('active')){
       user.roles = [{name: "ROLE_LANDLORD"}];
     }
@@ -61,7 +69,9 @@ input_el[6].addEventListener('click', async() => {
       console.log(newUser.status);
       err[3].textContent = "*Tên đăng nhập đã tồn tại";
     }else{
-      location.href='http://127.0.0.1:5500/view/login.html';
+
+	    
+      location.href='http://localhost:8081/login';
     }
 
   }

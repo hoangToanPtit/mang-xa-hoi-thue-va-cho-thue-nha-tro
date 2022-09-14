@@ -18,7 +18,7 @@ import com.nimbusds.jwt.SignedJWT;
 public class JwtService {
 	public static final String USERNAME = "userName";
 	public static final String ID = "id";
-	public static final String FULLNAME = "fullName";
+//	public static final String FULLNAME = "fullName";
 	public static final String SECRET_KEY = "11111111111111111111111111111111";
 	public static final int EXPIRE_TIME = 86400000;
 
@@ -30,41 +30,19 @@ public class JwtService {
 			JWTClaimsSet.Builder builder = new JWTClaimsSet.Builder();
 			builder.claim(USERNAME, userDTO.getUserName());
 			builder.claim(ID, userDTO.getId()+"");
-			builder.claim(FULLNAME, userDTO.getFullName());
+//			builder.claim(FULLNAME, userDTO.getFullName());
 			builder.expirationTime(generateExpirationDate());
 			JWTClaimsSet claimsSet = builder.build();
 			SignedJWT signedJWT = new SignedJWT(new JWSHeader(JWSAlgorithm.HS256), claimsSet);
 			// Apply the HMAC protection
 			signedJWT.sign(signer);
-			// Serialize to compact form, produces something like
-			// eyJhbGciOiJIUzI1NiJ9.SGVsbG8sIHdvcmxkIQ.onO9Ihudz3WkiauDO2Uhyuz0Y18UASXlSc1eS0NkWyA
 			token = signedJWT.serialize();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return token;
 	}
-	
-//	public String generateTokenLogin(String username) {
-//		String token = null;
-//		try {
-//			// Create HMAC signer
-//			JWSSigner signer = new MACSigner(generateShareSecret());
-//			JWTClaimsSet.Builder builder = new JWTClaimsSet.Builder();
-//			builder.claim(USERNAME, username);
-//			builder.expirationTime(generateExpirationDate());
-//			JWTClaimsSet claimsSet = builder.build();
-//			SignedJWT signedJWT = new SignedJWT(new JWSHeader(JWSAlgorithm.HS256), claimsSet);
-//			// Apply the HMAC protection
-//			signedJWT.sign(signer);
-//			// Serialize to compact form, produces something like
-//			// eyJhbGciOiJIUzI1NiJ9.SGVsbG8sIHdvcmxkIQ.onO9Ihudz3WkiauDO2Uhyuz0Y18UASXlSc1eS0NkWyA
-//			token = signedJWT.serialize();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		return token;
-//	}
+
 
 	
 	private JWTClaimsSet getClaimsFromToken(String token) {

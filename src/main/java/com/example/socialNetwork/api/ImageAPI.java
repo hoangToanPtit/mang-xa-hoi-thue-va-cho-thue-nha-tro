@@ -49,6 +49,8 @@ public class ImageAPI {
 	
 	@PostMapping("/api/images")
 	public ImageDTO fileUpload(@RequestParam("file") MultipartFile file) throws IOException {
+		
+		
 		ImageDTO imageDTO = new ImageDTO(file.getOriginalFilename());
 		imageDTO = imageService.save(imageDTO);
 		
@@ -65,7 +67,6 @@ public class ImageAPI {
 	public ImageDTO fileUpload(@PathVariable Long postId, @RequestParam("file") MultipartFile file) throws IOException {
 		ImageDTO imageDTO = new ImageDTO(file.getOriginalFilename(), new PostDTO(postId));
 		imageDTO = imageService.save(imageDTO);
-//		System.out.println(FILE_DIRECTORY + imageDTO.getId() + file.getOriginalFilename());  //path
 		
 		
 		File myFile = new File(FILE_DIRECTORY + imageDTO.getId() + file.getOriginalFilename());

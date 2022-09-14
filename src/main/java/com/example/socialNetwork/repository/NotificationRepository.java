@@ -11,7 +11,6 @@ import org.springframework.data.jpa.repository.Query;
 import com.example.socialNetwork.entity.NotificationEntity;
 
 public interface NotificationRepository extends JpaRepository<NotificationEntity, Long>{
-//	List<NotificationEntity> findAllByReceiver(Long receiverId);
 	
 	@Modifying
 	@Transactional
@@ -23,4 +22,9 @@ public interface NotificationRepository extends JpaRepository<NotificationEntity
 	@Transactional
 	@Query(value = "UPDATE notification SET status= 0 where receiver=?1", nativeQuery = true)
 	void deleteNotifications(Long receiverId);
+	
+	@Modifying
+	@Transactional
+	@Query(value = "delete from notification where post=?1", nativeQuery = true)
+	void deleteNotificationByPostID(Long postId);
 }

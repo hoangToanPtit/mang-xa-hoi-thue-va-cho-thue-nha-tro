@@ -110,7 +110,7 @@ function addEventForNewBox(){
             })
     
             input_textarea.forEach(e => {
-                newPst[e.name] = e.value;
+                newPst[e.name] =  e.value.replace(/\n\r?/g, '<br />');
                 e.value = '';
             }) 
     
@@ -204,6 +204,16 @@ function addEventForNewBox(){
     
             wrap_new_post.style.display = 'none';
             renderNewPost(newPost);
+        }
+
+        async function newFunction(newPost, h) {
+            await images.forEach(async (e) => {
+                await fetch(`${url_img}/${newPost.id}`, {
+                    method: 'PUT',
+                    headers: h,
+                    body: JSON.stringify(e)
+                });
+            });
         }
     })
     
@@ -339,6 +349,10 @@ async function deleteImage(imageId){
 // reder new posts
 
 function renderNewPost(e) {
+	let url_avt = url_avt_default;
+	if(e.authorUser.avt!=null) {
+		url_avt = `${url_img}/${e.authorUser.avt.id}`;
+	}
     const feeds = document.querySelector('.middle .feeds');
     let html = feeds.innerHTML;
     html =   `
@@ -347,7 +361,7 @@ function renderNewPost(e) {
             <div class="head">
                 <div class="user">
                     <div class="profile-photo">
-                        <img src="${url_img}/${e.authorUser.avt.id}" alt="">
+                        <img src="${url_avt}" alt="">
                     </div>
                     <div class="ingo">
                     <h3>${e.authorUser.fullName}</h3>
@@ -907,7 +921,7 @@ function addEventForEditBox(newPst_edit){
             })
     
             input_textarea_edit.forEach(e => {
-                newPst_edit[e.name] = e.value;
+                newPst_edit[e.name] =  e.value.replace(/\n\r?/g, '<br />');
                 e.value = '';
             }) 
     

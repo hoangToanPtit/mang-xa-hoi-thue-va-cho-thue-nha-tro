@@ -2,7 +2,7 @@
 let profileHeaders = new Headers();
 profileHeaders.append("Content-Type", "application/json");
 profileHeaders.append('authorization', localStorage.getItem('authorization'));
-
+var url_avt_default = "../images/profile-1.jpg";
 
 
 const urlMyProfile = "http://localhost:8081/api/users";
@@ -120,7 +120,7 @@ console.log(btn_post_prf);
                 // return user;
                 renderMySavedPost(savedPost);
             } catch(error){
-                location.href='http://127.0.0.1:5500/view/home.html';
+                location.href='http://localhost:8081';
             }
 
             btn_post_prf.classList.remove('active');
@@ -128,11 +128,11 @@ console.log(btn_post_prf);
 
 
     } catch(error){
-        location.href='http://127.0.0.1:5500/view/home.html';
+        location.href='http://localhost:8081';
     }
 
 })();
-
+/*"${url_img}/${e.authorUser.avt.id}"*/
 // ${url_img}/${userCur.avt.id}
 // function renderMyPost();
 function renderMyPost(posts){
@@ -141,6 +141,10 @@ function renderMyPost(posts){
     console.log(posts);
     feeds.innerHTML = '';
     posts.forEach(e => {
+		let url_avt = url_avt_default;
+		if(e.authorUser.avt!=null) {
+			url_avt = `${url_img}/${e.authorUser.avt.id}`;
+		}
         let html=
         `
         <!-- ---------Test Feed 1--------- -->
@@ -148,7 +152,7 @@ function renderMyPost(posts){
             <div class="head">
                 <div class="user">
                     <div class="profile-photo">
-                        <img src="${url_img}/${e.authorUser.avt.id}" alt="">
+                        <img src="${url_avt}" alt="">
                     </div>
                     <div class="ingo">
                         <h3>${e.authorUser.fullName}</h3>
@@ -618,6 +622,14 @@ function renderMyPost(posts){
             }) 
         }
        
+       const edit_btn = feeds.querySelector('.feed:last-child .edit');
+       console.log(edit_btn);
+       
+       feeds.querySelector('.feed:last-child .edit-box').addEventListener('mouseleave', ()=>{
+			console.log("bam");
+			console.log(feeds.querySelector('.feed:last-child .edit-box'));
+			feeds.querySelector('.feed:last-child .edit-box').classList.add('none');
+		})
 
     });
     
@@ -663,6 +675,10 @@ function renderMySavedPost(posts){
     console.log(posts);
     feeds.innerHTML = '';
     posts.forEach(e => {
+		let url_avt = url_avt_default;
+		if(e.authorUser.avt!=null) {
+			url_avt = `${url_img}/${e.authorUser.avt.id}`;
+		}
         let html=
         `
         <!-- ---------Test Feed 1--------- -->
@@ -670,7 +686,7 @@ function renderMySavedPost(posts){
             <div class="head">
                 <div class="user">
                     <div class="profile-photo">
-                        <img src="${url_img}/${e.authorUser.avt.id}" alt="">
+                        <img src="${url_avt}" alt="">
                     </div>
                     <div class="ingo">
                         <h3>${e.authorUser.fullName}</h3>
@@ -1184,9 +1200,14 @@ function renderInfor(user) {
     const dob = document.querySelector('.profile-card .dob');
     const phone = document.querySelector('.profile-card .phone');
     const email = document.querySelector('.profile-card .email');
-
-    document.querySelector('.create .profile-photo img').src = `${url_img}/${user.avt.id}`;
-    document.querySelector('.create-post .profile-photo img').src = `${url_img}/${user.avt.id}`;
+   	
+	let url_avt = url_avt_default;
+	if(user.avt!=null) {
+		url_avt = `${url_img}/${user.avt.id}`;
+	}
+		
+    document.querySelector('.create .profile-photo img').src = `${url_avt}`;
+    document.querySelector('.create-post .profile-photo img').src = `${url_avt}`;
 
     // console.log(fullName, dob, phone, email);
 
@@ -1197,10 +1218,11 @@ function renderInfor(user) {
     phone.textContent = user.phone;
     email.textContent = user.email;
     if(user.avt!=null){
-        document.querySelector('.profile-card .avt').src = `${url_img}/${user.avt.id}`;
+        document.querySelector('.profile-card .avt').src = `${url_avt}`;
     } else{
-        document.querySelector('.profile-card .avt').src = `${url_img}/${48}`;
-
+        //document.querySelector('.profile-card .avt').src = `${url_img}/${48}`;
+        document.querySelector('.profile-card .avt').src = `../images/profile-1.jpg`;
+	
     }
 }
 
@@ -1397,7 +1419,7 @@ const btn_logout = document.querySelector('.btn_menu_logout');
 
 btn_logout.addEventListener('click', () => {
     localStorage.removeItem('authorization');
-    location.href='http://127.0.0.1:5500/view/home.html';
+    location.href='http://localhost:8081';
 })
 
 

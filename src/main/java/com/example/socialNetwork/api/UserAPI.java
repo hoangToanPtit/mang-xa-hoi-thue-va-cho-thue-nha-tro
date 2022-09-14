@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.socialNetwork.config.PasswordEncode;
 import com.example.socialNetwork.dto.PostDTO;
 import com.example.socialNetwork.dto.UserDTO;
 import com.example.socialNetwork.service.ICommentSevice;
@@ -36,9 +38,10 @@ public class UserAPI {
 	@Autowired
 	private IPostService postService;
 
+
 	@PostMapping(value = "/api/login")
 	public ResponseEntity<String> postMethodName(@RequestBody  UserDTO model) {
-		//TODO: process POST request
+		model.setPassword(PasswordEncode.encode(model.getPassword()));
 	    String result = "";
 	    HttpStatus httpStatus = null;
 	    try {
@@ -54,19 +57,17 @@ public class UserAPI {
 	      result = "Server Error";
 	      httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
 	    }
-	    System.out.println(jwtService.getUsernameFromToken(result));
-	    System.out.println(jwtService.getUseIdFromToken(result));
 		return new ResponseEntity<String>(result, httpStatus);
 	}
 
 	@GetMapping(value = "/api/profiles")
 	public UserDTO getProfile(@RequestHeader("authorization") String token) {
-//		System.out.println("token: " + token);
 		return userService.getInfoByToken(token);
 	}
 	
 	@PostMapping(value = "/api/signup")
 	public UserDTO createNew(@RequestBody UserDTO model) {
+		model.setPassword(PasswordEncode.encode(model.getPassword()));
 		return userService.save(model);
 	}
 
@@ -104,7 +105,6 @@ public class UserAPI {
 		UserDTO user = userService.save(model);
 		user = userService.findById(user.getId());
 		for (PostDTO postDTO : user.getPosts()) {
-//			postDTO.setImages(imageService.findAllInPost(postDTO.getId()));
 			postDTO.setComments(commentSevice.findAllOfPost(postDTO.getId()));
 		}
 		return user;

@@ -14,4 +14,5 @@ public interface INotificationService {
 	List<NotificationDTO> findAllNotiForUser(Long userId);
 	int totalItem();
 	void deleteNotification(Long receiverId);
+	void deleteNotificationByPostId(Long postId);
 }

@@ -27,6 +27,7 @@ var feeds = null;
 var currentUser = null;
 var arrSavedPost = null;
 var menu_item_home = null;
+var url_avt_default = "../images/profile-1.jpg";
 
 
 
@@ -34,7 +35,23 @@ var menu_item_home = null;
     
     currentUser =  await getUser();
     
-    // console.log(currentUser.role[0]);
+    /*		//var form = document.getElementById('the-form');
+		const file = new File([data], "../images/profile-1.jpg", {
+        type: 'image/png'
+        });
+		//var file = new File('../images/profile-1.jpg');
+		var fd = new FormData();
+    	fd.append('file', file);
+    	
+	    let h = new Headers();
+	    //h.append('authorization', localStorage.getItem('authorization'));
+	    const res = await  fetch(url_img, {
+	        method: 'POST',
+	        headers: h,
+	        body: fd
+	    })*/
+	    
+    console.log(currentUser);
 
     if(currentUser.roles[0].name=='ROLE_LANDLORD'){
         document.querySelector('.menu-quick-search-item').style.display = 'flex';
@@ -51,12 +68,24 @@ var menu_item_home = null;
 
     
     const tagName = document.querySelector('.profile .fullName');
+    const nickName = document.querySelector('.profile p');
     // console.log("tagnaem", currentUser.fullName);
     // tagName.textContent = localStorage.getItem('fullName');
     tagName.textContent = currentUser.fullName;
-    document.querySelector('.profile .profile-photo img').src = `${url_img}/${currentUser.avt.id}`;
-    document.querySelector('.create .profile-photo img').src = `${url_img}/${currentUser.avt.id}`;
-    document.querySelector('.create-post .profile-photo img').src = `${url_img}/${currentUser.avt.id}`;
+    if(currentUser.nickName!=null)
+    	nickName.textContent = currentUser.nickName;
+    else nickName.textContent = '';
+    
+    let url_avt = url_avt_default;
+	if(currentUser.avt!=null) {
+		url_avt = `${url_img}/${currentUser.avt.id}`;
+	}
+	
+	document.querySelector('.profile .profile-photo img').src = `${url_avt}`;
+	document.querySelector('.create .profile-photo img').src = `${url_avt}`;
+	document.querySelector('.create-post .profile-photo img').src = `${url_avt}`;
+    
+
     
     feeds = document.querySelector('.feeds');
     menu_item_home = document.querySelector('.menu-item-home');
@@ -102,7 +131,7 @@ var menu_item_home = null;
             // return user;
             renderSavedPost(savedPost);
         } catch(error){
-            location.href='http://127.0.0.1:5500/view/home.html';
+            location.href='http://localhost:8081';
         }
         window.removeEventListener('scroll', autoLoadPost);
     })
@@ -113,6 +142,7 @@ var menu_item_home = null;
 
 
 async function renderPost(){
+
     currentPage++;
     console.log("currentPage:" + currentPage);
     const res = await  fetch(`${urlPost}/${currentPage}/${size}`, {
@@ -125,6 +155,10 @@ async function renderPost(){
     if(currentPage==0)
         feeds.innerHTML = '';
     await posts.reverse().forEach(e => {
+		let url_avt = url_avt_default;
+		if(e.authorUser.avt!=null) {
+			url_avt = `${url_img}/${e.authorUser.avt.id}`;
+		}
         let html =
         `
         <!-- ---------Test Feed 1--------- -->
@@ -132,7 +166,7 @@ async function renderPost(){
             <div class="head">
                 <div class="user">
                     <div class="profile-photo">
-                        <img src="${url_img}/${e.authorUser.avt.id}" alt="">
+                        <img src="${url_avt}" alt="">
                     </div>
                     <div class="ingo">
                         <h3>${e.authorUser.fullName}</h3>
@@ -682,7 +716,7 @@ async function getUser() {
         console.log(user);
         return user;
     } catch(error){
-        location.href='http://127.0.0.1:5500/view/home.html';
+        location.href='http://localhost:8081';
     }
     return null;
 }
@@ -723,6 +757,11 @@ function renderSavedPost(posts){
     console.log(posts);
     feeds.innerHTML = '';
     posts.forEach(e => {
+		let url_avt = url_avt_default;
+		if(e.authorUser.avt!=null) {
+			url_avt = `${url_img}/${e.authorUser.avt.id}`;
+		}
+	
         let html=
         `
         <!-- ---------Test Feed 1--------- -->
@@ -730,7 +769,7 @@ function renderSavedPost(posts){
             <div class="head">
                 <div class="user">
                     <div class="profile-photo">
-                        <img src="${url_img}/${e.authorUser.avt.id}" alt="">
+                        <img src="${url_avt}" alt="">
                     </div>
                     <div class="ingo">
                         <h3>${e.authorUser.fullName}</h3>

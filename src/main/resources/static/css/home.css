@@ -2779,3 +2779,8 @@ main .container .right {
 .new-description{
     margin-left: 30px;
 }
+
+
+.right  .active{
+    box-shadow: 0 0 1rem var(--color-primary);
+}

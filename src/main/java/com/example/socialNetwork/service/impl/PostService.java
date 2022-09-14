@@ -9,7 +9,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.socialNetwork.converter.PostConverter;
-import com.example.socialNetwork.dto.ImageDTO;
 import com.example.socialNetwork.dto.PostConditionDTO;
 import com.example.socialNetwork.dto.PostDTO;
 import com.example.socialNetwork.dto.ResultDTO;
@@ -29,14 +28,13 @@ public class PostService implements IPostService{
 	@Autowired
 	private PostRepository postRepository;
 
+	
 	@Autowired
 	private UserRepository userRepository;
 	
 	@Autowired
 	private TopicService topicService;
 	
-//	@Autowired
-//	private CommentConverter commentConverter;
 	
 	@Override
 	public PostDTO save(PostDTO postDTO) {

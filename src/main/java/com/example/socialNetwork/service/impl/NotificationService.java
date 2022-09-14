@@ -88,4 +88,11 @@ public class NotificationService implements INotificationService{
 		notificationRepository.deleteNotifications(receiverId);
 	}
 
+
+	@Override
+	public void deleteNotificationByPostId(Long postId) {
+		// TODO Auto-generated method stub
+		notificationRepository.deleteNotificationByPostID(postId);
+	}
+
 }

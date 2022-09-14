@@ -11,11 +11,6 @@ public class CommonController {
         return "index";
     }
 	
-//	@GetMapping("/home")
-//    public String homepage2() {
-//        return "index";
-//    }
-	
 	@GetMapping("/login")
     public String login() {
         return "login";

@@ -13,23 +13,17 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
 
-    <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"> -->
-	<!-- <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
-
-    <!-- iconsout -->
-    <!-- <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/slider.css" /> -->
      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/slider.css}"/>
 
-    <title>Social media</title>
+    <title>Renzy Social</title>
 </head>
 <body>
     <nav>
         <div class="container" style="width: 85%;">
             <h2 class="log">
-                SocialMedia
+                <a href="http://localhost:8081">RenzySocial</a>
             </h2>
             <div class="search-bar">
                 <i class="uil uil-search"></i>
@@ -52,7 +46,7 @@
             <div class="left">
                 <a class="profile">
                     <div class="profile-photo">
-                        <img src="../images/profile-1.jpg" alt="">
+                        <img src="../images/loading.png" alt="">
                     </div>
                     <div class="handle">
                         <h4 class="fullName">Nguyen Van Toan</h4>
@@ -404,7 +398,7 @@
                 <div class="feeds">
 
                     <!-- ---------Test Feed 1--------- -->
-                    <div class="feed" id="p1">
+                    <div class="feed none" id="p1">
                         <div class="head">
                             <div class="user">
                                 <div class="profile-photo">
@@ -885,7 +879,7 @@
                     <!-- ---------End of Test Feed 1--------- -->
 
                     <!-- ---------Feed 1--------- -->
-                    <div class="feed">
+                    <div class="feed none">
                         <div class="head">
                             <div class="user">
                                 <div class="profile-photo">
@@ -935,7 +929,7 @@
                             
                         </div>
 
-                        <div class="comments text-muted">View all 277 comments</div>
+                        <!-- <div class="comments text-muted">View all 277 comments</div> -->
                     </div>
                     <!-- ---------End of Feed 1--------- -->
 
@@ -1478,31 +1472,6 @@
     <!-- --------------------------New Posts------------------- -->
 
 
-    <!-- <script src="https://unpkg.com/kd-shim-sockjs-client@0.3.4/sockjs-0.3.4.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js" integrity="sha512-tL4PIUsPy+Rks1go4kQG8M8/ItpRMvKnbBjQm4d2DQnFwgcBYRRN00QdyQnWSCwNMsoY/MfJY8nHp2CzlNdtZA==" crossorigin="anonymous"></script> -->
-    <!-- <script src="../asset/js/init_socket.js"></script> -->
-    <!-- <script src="https://unpkg.com/kd-shim-sockjs-client@0.3.4/sockjs-0.3.4.js"></script>
-    <script  src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script> -->
-    
-<!--     <script src="../static/js/slider.js"></script>
-    
-    <script type="text/javascript" src="https://unpkg.com/kd-shim-sockjs-client@0.3.4/sockjs-0.3.4.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js" integrity="sha512-tL4PIUsPy+Rks1go4kQG8M8/ItpRMvKnbBjQm4d2DQnFwgcBYRRN00QdyQnWSCwNMsoY/MfJY8nHp2CzlNdtZA==" crossorigin="anonymous"></script>
-    
-    <script src="../static/js/init_socket.js"></script>
-    <script src="../asset/js/profile.js"></script>
-    <script src="../static/js/like.js"></script>
-
-    <script src="../static/js/notifications.js"></script>
-    <script src="../static/js/save.js"></script>
-    <script src="../static/js/index.js"></script>
-    <script src="../static/js/comment.js"></script>
-    <script src="../static/js/posts.js"></script>
-    <script src="../static/js/new_post.js"></script>
-    <script src="../static/js/location.js"></script>
-    <script src="../static/js/search.js"></script>
-    <script src="../static/js/quickSearch.js"></script> -->
     
     <script type="text/javascript" th:src="@{/js/slider.js}"></script>
 	

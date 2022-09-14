@@ -25,7 +25,6 @@ public class MessageController {
     @MessageMapping("/message")
     @SendTo("/topic/messages")
     public CommentDTO getMessage(final CommentDTO comment) throws InterruptedException {
-//        Thread.sleep(1000);
         notificationServiceSocket.sendGlobalNotification();
         return comment;
     }
@@ -34,7 +33,6 @@ public class MessageController {
     @MessageMapping("/likes")
     @SendTo("/topic/likes")
     public LikeSocket getMessage(final LikeSocket like) throws InterruptedException {
-//        Thread.sleep(1000);
         notificationServiceSocket.sendGlobalNotification();
         return like;
     }
@@ -43,7 +41,6 @@ public class MessageController {
     @MessageMapping("/notifications")
     @SendTo("/topic/notifications")
     public NotificationDTO getMessage(final NotificationDTO noti) throws InterruptedException {
-//        Thread.sleep(1000);
         notificationServiceSocket.sendGlobalNotification();
         return noti;
     }
@@ -53,7 +50,6 @@ public class MessageController {
     @SendToUser("/topic/private-messages")
     public ResponseMessage getPrivateMessage(final Message message,
                                              final Principal principal) throws InterruptedException {
-//        Thread.sleep(1000);
         notificationServiceSocket.sendPrivateNotification(principal.getName());
         
         return new ResponseMessage(HtmlUtils.htmlEscape(

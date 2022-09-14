@@ -149,7 +149,6 @@ public class UserService implements IUserService{
 		List<RoleEntity> roleEntities = userEntity.getRoles();
 		List<RoleDTO> roleDtos = new ArrayList<RoleDTO>();
 		for (RoleEntity role : roleEntities) {
-			System.out.println("role: " + role.getName());
 			roleDtos.add(roleConverter.toDto(role));
 		}
 		userDto.setRoles(roleDtos);
@@ -211,7 +210,6 @@ public class UserService implements IUserService{
 		List<PostEntity> postEntities = userEntity.getPosts();
 		List<PostDTO> postDtos = new ArrayList<PostDTO>();
 		for (PostEntity post : postEntities) {
-//			System.out.println(post.getId());
 			postDtos.add(postService.getById(post.getId()));
 		}
 		for (PostDTO postDTO : postDtos) {
@@ -223,7 +221,6 @@ public class UserService implements IUserService{
 		List<PostEntity> savedPostEntities = userEntity.getSavedPost();
 		List<PostDTO> savedPostDtos = new ArrayList<PostDTO>();
 		for (PostEntity post : savedPostEntities) {
-//			System.out.println(post.getId());
 			savedPostDtos.add(postService.getById(post.getId()));
 		}
 		for (PostDTO sp : savedPostDtos) {
@@ -237,6 +234,7 @@ public class UserService implements IUserService{
 	@Override
 	public ImageDTO getAvt(Long id) {
 		UserEntity userEntity = userRepository.findById(id).get();
+		if(userEntity.getAvt()==null) return null;
 		return imageService.findById(userEntity.getAvt().getId());
 	}
 

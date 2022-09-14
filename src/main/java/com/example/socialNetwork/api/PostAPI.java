@@ -25,6 +25,7 @@ import com.example.socialNetwork.service.IImageService;
 import com.example.socialNetwork.service.IPostService;
 import com.example.socialNetwork.service.IUserService;
 import com.example.socialNetwork.service.impl.JwtService;
+import com.example.socialNetwork.service.impl.NotificationService;
 
 @CrossOrigin
 @RestController

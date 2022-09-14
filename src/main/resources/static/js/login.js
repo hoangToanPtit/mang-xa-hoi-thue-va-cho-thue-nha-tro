@@ -24,6 +24,11 @@ btn_login.addEventListener('click', async() => {
     })
     const auth = await res.text();
     console.log(auth);
+    if(auth=="Server Error"){
+		document.querySelector('.err').style.display='block';
+	
+	}
+    
     if(auth!='Server Error'){
         localStorage.setItem('authorization', auth);
         headers.append('authorization', auth);
@@ -33,7 +38,8 @@ btn_login.addEventListener('click', async() => {
         })
 
         const user = await resp.json();
-        console.log(user);
+        /*console.log(user);*/
+        
         
         location.href='http://localhost:8081/home';
     }

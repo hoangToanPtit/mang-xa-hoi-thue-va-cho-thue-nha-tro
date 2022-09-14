@@ -48,6 +48,14 @@ function maxSizeSearchBox(){
 if(btn_menu_search!=null){
     btn_menu_search.addEventListener('click', () => {
         document.querySelector('.quick-search').classList.add('none');
+        
+		let btn_search_home = document.querySelector('.btn-search-box');
+        if(btn_search_home!=null)
+            btn_search_home.classList.add('active');
+        let quick_search_home = document.querySelector('.quick-search-home');
+        if(quick_search_home!=null)
+            quick_search_home.classList.remove('none');
+
         form_search_posts.style.display = 'block';
         feeds_result.innerHTML = '';
         btn_create_post.style.display = 'none';

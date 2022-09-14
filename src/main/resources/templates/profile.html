@@ -22,13 +22,13 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/css/style-profile.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/slider.css}"/>
     
-    <title>Profile</title>
+    <title>Renzy Social</title>
 </head>
 <body>
     <nav>
         <div class="container" style="width: 85%;">
             <h2 class="log">
-                <a href="http://localhost:8081/home">SocialMedia</a>
+                <a href="http://localhost:8081/home">RenzySocial</a>
             </h2>
             <div class="search-bar" style="margin-left: 40px;">
                 <i class="uil uil-search"></i>
@@ -37,7 +37,7 @@
             <div class="create">
                 <label class="btn btn-primary btn_new_post" for="create-post">Đăng tin</label>
                 <div class="profile-photo">
-                    <img src="../images/profile-1.jpg" alt="">
+                    <img src="../images/loading.png" alt="">
                 </div>
                 <!-- <div>
                     <img src="../images/icons8-sort-down-24.png" alt="">
@@ -73,7 +73,7 @@
             <div class="left">
                 <div class="profile-card">
                     <div class="cover-photo">
-                        <img src="../images/profile-1.jpg" alt="" class="avt">
+                        <img src="../images/loading.png" alt="" class="avt">
                         <input type="file" name="" id="input-avt" style="display: none;">
                         <label for="input-avt" class="change-avt"><i class="uil uil-camera"></i></label>
                     </div>
@@ -126,7 +126,7 @@
 
                 <form class="create-post">
                     <div class="profile-photo">
-                        <img src="../images/profile-1.jpg" alt="">
+                        <img src="../images/loading.png" alt="">
                     </div>
                     <input type="text" placeholder="Giới thiệu nhà trọ bạn biết đến mọi người" id="create-post">
                     <input type="button" class="btn btn-primary btn_new_post" value="Bắt đầu">
@@ -135,91 +135,7 @@
                 <!-- ---------Feeds--------- -->
                 <div class="feeds">
 
-                    <!-- ---------Test Feed 1--------- -->
-                    <div class="feed">
-                        <div class="head">
-                            <div class="user">
-                                <div class="profile-photo">
-                                    <img src="../images/profile-1.jpg" alt="">
-                                </div>
-                                <div class="ingo">
-                                    <h3>Nguyen Van Toan</h3>
-                                    <small>Dubai, 15 Minutes ago</small>
-                                </div>
-                            </div>
-                            <span class="edit">
-                                <i class="uil uil-ellipsis-h"></i>
-                            </span>
-                            <div class="edit-box  none">
-                                <ul>
-                                    <li class="btn_edit_post">Chỉnh sửa</li>
-                                    <li class="btn_delete_post"  id = "edit0">Xóa</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="photo photo_cus">
-                            <img src="../images/feed-1.jpg" alt="">
-                            <div class="photo_mix_cus">
-                                <img src="../images/feed-2.jpg" alt="">
-                                <img src="../images/feed-3.jpg" alt="">
-                            </div>
-                        </div>
-
-                        <div class="like-by" style="font-size: 0.8rem;">
-                            <span><img src="../images/profile-10.jpg" alt=""></span>
-                            <span><img src="../images/profile-11.jpg" alt=""></span>
-                            <span><img src="../images/profile-17.jpg" alt=""></span>
-                            <p>Liked by <b>A</b>, <b>B</b>, <b>C</b> and 1K others</p>
-                        </div>
-                        <div class="action-button">
-                            <div class="interaction-buttons">
-                                <span><i class="uil uil-heart"></i></span>
-                                <span><i class="uil uil-comment-dots"></i></span>
-                            </div>
-                            <div class="bookmark">
-                                <span><i class="fa fa-bookmark-o btn_save" aria-hidden="true"></i></span>
-                                <!-- <span><i class="fa fa-bookmark" aria-hidden="true"></i></span> -->
-
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3>Phòng cho thuê Triều Khúc</h3>
-                            Giá thuê: <span style="color: red; font-size: 1rem;"><b>5,000,000</b></span> VND/Phòng<br>
-                        </div>
-                        <div>
-                            <div>
-                                Số phòng: 5
-                            </div>
-                            <div>
-                                Diện tích: 50 m2
-                            </div>
-                            <div>
-                                Sức chứa: 2 người
-                            </div>
-                            <div>
-                                Đặt cọc : 1tr
-                            </div>
-                        </div>
-                        <div>
-                            <h5>Chi tiết</h5>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                Molestias dolorum tenetur nam accusantium sapiente quod omnis 
-                                ipsa quo at mollitia dicta officiis, vitae nesciunt ea fugiat
-                                 commodi. Maxime, maiores suscipit!</p>
-                        </div>
-                        <div>
-                            <h5>Địa chỉ</h5>
-                            <div>Sô 3, ngõ 137 Triều Khúc, Tân Triều, Thanh Trì, Hà Nội</div>
-                        </div>
-                        <div>
-                            <h5>Tiện ích</h5>
-
-
-                        </div>
-                        <div class="comments text-muted btn">Xem chi tiết</div>
-                    </div>
-                    <!-- ---------End of Test Feed 1--------- -->
+                   
 
                 </div>
                 <!-- ---------End of Feeds --------- -->

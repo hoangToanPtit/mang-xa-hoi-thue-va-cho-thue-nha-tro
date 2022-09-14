@@ -31,12 +31,9 @@ public class JwtAuthenticationTokenFilter extends UsernamePasswordAuthentication
     if (jwtService.validateTokenLogin(authToken)) {
       String username = jwtService.getUsernameFromToken(authToken);
       Long id = jwtService.getUseIdFromToken(authToken);
-//      stackjava.com.sbjwt.entities.User user = userService.loadUserByUsername(username);
-//      com.example.socialNetwork.dto.UserDTO user = userService.loadUserByUsername(username);
       com.example.socialNetwork.dto.UserDTO user = userService.loadUserByIdAndUserName(id, username);
-//      System.out.println(user.getFullName());
+
       if (user != null) {
-    	  System.out.println(user.getFullName());
         boolean enabled = true;
         boolean accountNonExpired = true;
         boolean credentialsNonExpired = true;

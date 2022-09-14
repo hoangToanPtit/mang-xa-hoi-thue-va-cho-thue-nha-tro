@@ -23,7 +23,6 @@ public class CommentConverter {
 		CommentEntity entity = new CommentEntity();
 		entity.setContent(dto.getContent());
 		entity.setUser(userConverter.toEntity(userService.findById(dto.getUser().getId())));
-//		entity.setCreatedDate(null);
 		return entity;
 	}
 	
@@ -35,9 +34,4 @@ public class CommentConverter {
 		return dto;
 	}
 	
-	
-//	public ImageEntity toEntity(ImageEntity entity, ImageDTO dto) {
-//		String path = dto.getPath();
-//		return entity;
-//	}
 }

@@ -108,7 +108,6 @@ public class UserDTO {
 		try {
 			return smf.parse(dob);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -221,10 +220,7 @@ public class UserDTO {
 		this.roles = roles;
 	}
 
-//	public Collection<? extends GrantedAuthority> getAuthorities() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+
 
 	public List<GrantedAuthority> getAuthorities() {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
@@ -233,5 +229,6 @@ public class UserDTO {
 		}
 		return authorities;
 	}
+
 
 }
