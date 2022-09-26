@@ -65,7 +65,7 @@ d. Lược đồ EER
 
 ## 5. Video demo project
 
-
+link: https://drive.google.com/file/d/12v_chMVjZ4N4rBkq2SdlFwbqn6rteKbT/view?usp=sharing
 
 
 ## 6. Kết quả đã và chưa đạt được
