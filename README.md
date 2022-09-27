@@ -76,7 +76,7 @@ a. Kết quả đã đạt được:
 + Hoàn thành các tính năng riêng cho mục đích tìm kiếm nhà trọ: lưu tin, tìm kiếm nhanh, tìm kiếm chi tiết.
 
 b. Kết quả chưa đạt được:
-+ Chức năng tìm kiếm chi tiết chưa hoàn thiện được khía cạnh tìm kiếm theo địa chỉ.
++ Chức năng tìm kiếm chi tiết chưa hoàn thiện được 100% ở khía cạnh tìm kiếm theo địa chỉ.
 
 
 
